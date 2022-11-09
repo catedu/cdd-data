@@ -7,7 +7,7 @@ services:
     container_name: cursos-catedu
     command: "gunicorn --workers=5 --threads=1 -b 0.0.0.0:8050 app:server"
     volumes:
-      - .:/
+      - .:/home/app
     expose:
       - "8050"
     environment:
