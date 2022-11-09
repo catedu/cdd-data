@@ -36,7 +36,7 @@ app.layout = html.Div([
                         dcc.Dropdown(df["Categorías"].unique(), id="categoria", placeholder="Selecciona una categoría"),
                     ], width=6, style={"padding": "10px", "margin": "10px"}),
                 dbc.Col([
-                        html.Video(src="assets/videos/curso.mkv", controls=True, style={"width": "100%"}),
+                        html.Video(src="assets/videos/curso.mp4", controls=True, style={"width": "100%"}),
                     ], width=3, style={"padding": "10px", "margin": "10px"}),
                 ], justify="center"),
         dbc.Row([       
