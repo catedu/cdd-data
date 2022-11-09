@@ -228,6 +228,17 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "dash-daq"
+version = "0.5.0"
+description = "DAQ components for Dash"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+dash = ">=1.6.1"
+
+[[package]]
 name = "dash-html-components"
 version = "2.0.0"
 description = "Vanilla HTML components for Dash"
@@ -1349,7 +1360,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "flake8 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "e33fdd910a46a9b7c9602d8de990827096cc4d8d35f5f1bcd3edaeb48ff0fd3a"
+content-hash = "a9ca9d7ddcef68a8af43928f590e4afa9ef0924c5634e2576e8f550ae49eefe8"
 
 [metadata.files]
 ansi2html = []
@@ -1407,6 +1418,7 @@ colorama = []
 dash = []
 dash-bootstrap-components = []
 dash-core-components = []
+dash-daq = []
 dash-html-components = []
 dash-table = []
 debugpy = []

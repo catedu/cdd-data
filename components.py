@@ -1,24 +1,22 @@
 import dash_bootstrap_components as dbc
-from dash import dash_table
+from dash import dash_table, html
 
 navbar = dbc.NavbarSimple(
-    children=[
-        dbc.NavItem(dbc.NavLink("Page 1", href="#")),
-        dbc.DropdownMenu(
-            children=[
-                dbc.DropdownMenuItem("More pages", header=True),
-                dbc.DropdownMenuItem("Page 2", href="#"),
-                dbc.DropdownMenuItem("Page 3", href="#"),
-            ],
-            nav=True,
-            in_navbar=True,
-            label="More",
+    [
+        html.A(
+            # Use row and col to control vertical alignment of logo / brand
+            dbc.Row(
+                [
+                    dbc.Col(html.Img(src="assets/images/aularagon.png", height="50px"), width="12"),
+                ],
+                align="left",
+            ),
+            href="https://moodle.catedu.es",
+            # style={"textDecoration": "none"},
         ),
     ],
-    brand="NavbarSimple",
-    brand_href="#",
-    color="primary",
-    dark=True,
+    color="#5EC877",
+    dark=False,
 )
 
 def generate_table(df):
@@ -29,7 +27,7 @@ def generate_table(df):
             # page_size=20,
             page_action="native",
             page_current= 0,
-            page_size= 20,
+            page_size= 10,
             style_table = {'minWidth': '100%'},
             style_cell_conditional=[
                 {
@@ -40,15 +38,19 @@ def generate_table(df):
             style_data_conditional=[
                 {
                     'if': {'row_index': 'odd'},
-                    'backgroundColor': 'rgb(220, 220, 220)',
+                    'backgroundColor': '#F0EBD8',
                 }
             ],
             style_header={
-                'backgroundColor': 'rgb(210, 210, 210)',
-                'color': 'black',
-                'fontWeight': 'bold',
-                'border': '1px solid black'
+                'backgroundColor': '#748CAB',
+                'color': 'white',
+                # 'fontWeight': 'bold',
+                # 'border': '1px solid black'
             },
             sort_action='native',
+            fill_width=True,
+            filter_action='native',
+            filter_options={'case':'insensitive'},
             )
     return tabla
+

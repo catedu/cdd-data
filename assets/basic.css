@@ -2,3 +2,18 @@ img[src*="#thumbnail"] {
     width:50px;
     height:25px;
  }
+
+/* color for links */
+a:link {
+    color: #3E5C76;
+}
+
+/* color for visited links */
+a:visited {
+    color: #3E5C76;
+}
+
+/* mouse over link */
+a:hover {
+    color: #1D2D44;
+}
