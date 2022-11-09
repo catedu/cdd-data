@@ -13,6 +13,8 @@ DATA_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR-BAUvNUjp2AeV_daee
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.MATERIA])
 
+server = app.server
+
 def get_data():
     if not Path("data.csv").exists():
         pd.read_csv(DATA_URL).to_csv("data.csv", index=False)
@@ -64,4 +66,4 @@ def update_output_div(titulo, categoria):
     return generate_table(df_copy) #, "", ""
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)

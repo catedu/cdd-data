@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  cursos_catedu:
+    build: .
+    restart: always
+    container_name: cursos-catedu
+    command: "gunicorn --workers=5 --threads=1 -b 0.0.0.0:8050 app:server"
+    volumes:
+      - .:/
+    expose:
+      - "8050"
+    environment:
+      VIRTUAL_HOST: "infocursos.catedu.es"
+      LETSENCRYPT_HOST: "infocursos.catedu.es"
+      LETSENCRYPT_EMAIL: "jesuslopezdeleyva@gmail.com"
+#     networks:
+#       - nginx-proxy_frontend
+
+# networks:
+#   nginx-proxy_frontend:
+#     external: true
