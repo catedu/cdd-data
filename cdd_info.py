@@ -15,8 +15,15 @@ int_competencias = {
 }
 
 
-def competencias_form_int_to_str(x):
-    print(int_competencias.get(x))
+def convert_int_to_competencias(df):
+    df.iloc[:, -23:] = (
+        df.filter(regex="\d\.\d")
+        .fillna(0)
+        .astype(int)
+        .applymap(int_competencias.get)
+        .fillna("")
+    )
+    return df
 
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.MATERIA])
@@ -25,13 +32,6 @@ server = app.server
 
 df = pd.read_csv("Dicc.csv", sep=";")
 
-df.iloc[:, -23:] = (
-    df.filter(regex="\d\.\d")
-    .fillna(0)
-    .astype(int)
-    .applymap(int_competencias.get)
-    .fillna("")
-)
 
 df["bag_of_words"] = (
     df[["PALABRA_CLAVE", "SINONIMOS"]]
@@ -81,6 +81,7 @@ def show_table(palabra_clave):
         df["bag_of_words"].apply(lambda x: palabra_clave in x),
         df.filter(regex="\d\.\d").columns,
     ]
+    df_filtered = convert_int_to_competencias(df_filtered)
     return generate_filtered_table(df_filtered)
 
 
