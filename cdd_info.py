@@ -1,0 +1,89 @@
+from dash import Dash, dcc, html, Input, Output
+import dash_bootstrap_components as dbc
+import pandas as pd
+
+from components import generate_filtered_table
+
+# Create this dict as an ordered dict
+int_competencias = {
+    1: "A1",
+    2: "A2",
+    3: "B1",
+    4: "B2",
+    5: "C1",
+    6: "C2",
+}
+
+
+def competencias_form_int_to_str(x):
+    print(int_competencias.get(x))
+
+
+app = Dash(__name__, external_stylesheets=[dbc.themes.MATERIA])
+
+server = app.server
+
+df = pd.read_csv("Dicc.csv", sep=";")
+
+df.iloc[:, -23:] = (
+    df.filter(regex="\d\.\d")
+    .fillna(0)
+    .astype(int)
+    .applymap(int_competencias.get)
+    .fillna("")
+)
+
+df["bag_of_words"] = (
+    df[["PALABRA_CLAVE", "SINONIMOS"]]
+    .fillna("")
+    .apply(lambda x: x[0].lower().split(",") + x[1].lower().split(","), axis=1)
+)
+df["bag_of_words"] = df["bag_of_words"].apply(lambda x: [x.strip() for x in x])
+
+app.layout = html.Div(
+    [
+        dbc.Row(
+            [
+                dbc.Col(
+                    [
+                        dcc.Input(
+                            id="palabra-clave",
+                            type="text",
+                            placeholder="Introduce una palbra clave",
+                        ),
+                    ],
+                    lg=4,
+                    md=4,
+                    xs=12,
+                ),
+                dbc.Col([], lg=3, md=4, xs=12),
+                dbc.Col([], lg=3, md=4, xs=12),
+            ]
+        ),
+        dbc.Row(
+            [
+                dbc.Col([html.Div(id="output")]),
+            ]
+        ),
+    ]
+)
+
+
+@app.callback(
+    Output("output", "children"),
+    Input("palabra-clave", "value"),
+)
+def show_table(palabra_clave):
+    if palabra_clave is None or palabra_clave.strip() == "":
+        return None
+    palabra_clave = palabra_clave.strip().lower()
+    df_filtered = df.loc[
+        df["bag_of_words"].apply(lambda x: palabra_clave in x),
+        df.filter(regex="\d\.\d").columns,
+    ]
+    return generate_filtered_table(df_filtered)
+
+
+if __name__ == "__main__":
+    df
+    app.run_server(debug=True)

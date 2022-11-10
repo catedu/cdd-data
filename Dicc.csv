@@ -1,0 +1,304 @@
+PALABRA_CLAVE;SINONIMOS;GRUPO 1;GRUPO 2;1.1;1.2;1.3;1.4;1.5;2.1;2.2;2.3;3.1;3.2;3.3;3.4;4.1;4.2;4.3;5.1;5.2;5.3;6.1;6.2;6.3;6.4;6.5
+ABIESWEB;ADIASWEB, ADISWEB, ABIASWEB, ABISWEB, ABIES web, abbies, abies, ABIES, biblioteca digital, catalogación digital;ADMINISTRACION;;2;1;;1;1;1;;1;;;;;;;;;;;;;;;
+GIR ACADEMICO;GESTION ACADEMICA, GIR ACADEMICA;ADMINISTRACION;TTDD_PED_EVAL;1;;;1;1;;;;1;;;;1;1;1;;;;;;;;
+SIGAD;GESTION ACADEMICA, SIGAD-, SIGAD-ACADEMICA;ADMINISTRACION;TTDD_PED_EVAL;1;;;1;1;;;;1;;;;1;1;1;;;;;;;;
+PROBLEMAS TECNOLÓGICOS;;ADMINISTRACION;;;;;;;;;;;;;;;;;;;;;;;1;1
+AUDACITY;AUDCITY, AUDACITI, ADACITY, edición de audio;AUDIOVISUALES;SOFTWARE_LIBRE;;;;1;;;1;;1;;;;;;;1;;1;;;1;;1
+AUDIOVISUALES;AUDIOVISUAL;AUDIOVISUALES;TTDD_PED_EVAL;;;;1;;;;;1;;;;1;;;;;1;;;1;;1
+CROMA;CHROMA;AUDIOVISUALES;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+CUBASE;LOGIC PRO;AUDIOVISUALES;;;;;1;;;2;;1;;;;;;;;;1;;;1;;1
+DARKTABLE;DARTABLE;AUDIOVISUALES;;;;;1;;;2;;1;;;;;;;1;;1;;;1;;1
+DAVINCI RESOLVE;creacion de video, edicion de video, audiovisual;AUDIOVISUALES;;;;;1;;;2;;1;;;;;;;;;1;;;1;;1
+ENTAMGLE;;AUDIOVISUALES;;;;;1;;;2;;1;;;;;;;;;1;;;1;;1
+FILMORA;Pixton, Book Creator, storyboardthat;AUDIOVISUALES;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+FINAL CUT;FINALCUT;AUDIOVISUALES;;;;;1;;;2;;1;;;;;;;;;1;;;1;;1
+GIMP;JIMP;AUDIOVISUALES;;;;;1;;;1;;1;;;;;;;1;;1;;;1;;1
+HANDBRAKE;;AUDIOVISUALES;SOFTWARE_LIBRE;;;;1;;;1;;1;;;;;;;1;;1;;;1;;1
+HOME-3D;HOME3D;AUDIOVISUALES;;;;;1;;;2;;1;;;;;;;1;;1;;;1;;1
+IMOVIE;;AUDIOVISUALES;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+INKSCAPE;;AUDIOVISUALES;;;;;1;;;1;;1;;;;;;;1;;1;;;1;;1
+KODI;CODI;AUDIOVISUALES;SOFTWARE_LIBRE;;;;1;;;1;;1;;;;;;;1;;1;;;1;;1
+KRITA;CRITA;AUDIOVISUALES;;;;;1;;;1;;1;;;;;;;1;;1;;;1;;1
+LIGHTWORKS;;AUDIOVISUALES;SOFTWARE_LIBRE;;;;1;;;2;;1;;;;;;;1;;1;;;1;;1
+LILYPOND;LILIPOND;AUDIOVISUALES;SOFTWARE_LIBRE;;;;1;;;1;;1;;;;;;;1;;1;;;1;;1
+LMMS;;AUDIOVISUALES;SOFTWARE_LIBRE;;;;1;;;2;;1;;;;;;;1;;1;;;1;;1
+MIDI;M.I.D.I;AUDIOVISUALES;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+MIXXX;MIX, MIXX;AUDIOVISUALES;SOFTWARE_LIBRE;;;;1;;;2;;1;;;;;;;1;;1;;;1;;1
+MOVIE MAKER;MOVI MAKER, MOVIE MAIKER, MUVI MAKER,  booktrailer;AUDIOVISUALES;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+OBS;OBS STUDIO, OBS ESTUDIO;AUDIOVISUALES;SOFTWARE_LIBRE;1;1;;1;1;;1;;1;;;;;;;1;;1;;;1;;1
+OPEN BROADCASTER SOFTWARE;;AUDIOVISUALES;SOFTWARE_LIBRE;;;;1;;;1;;1;;;;;;;1;;1;;;1;;1
+OPENSHOT;OPENSOT;AUDIOVISUALES;SOFTWARE_LIBRE;;;;1;;;1;;1;;;;;;;1;;1;;;1;;1
+PHOTOSHOP;PHOTOSOP, FOTOSHOP, FOTOSOP;AUDIOVISUALES;;;;;1;;;2;;1;;;;;;;;;1;;;1;;1
+PODCAST;PODCAS;AUDIOVISUALES;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+PREMIERE;PREMIER, after effects, aftereffects, after effect, aftereffect;AUDIOVISUALES;;;;;1;;;2;;1;;;;;;;;;1;;;1;;1
+PROTOOLS;PROTULS, archivos sonoros;AUDIOVISUALES;;;;;1;;;2;;1;;;;;;;;;1;;;1;;1
+RADIO;;AUDIOVISUALES;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+RAWTHERAPE;;AUDIOVISUALES;SOFTWARE_LIBRE;;;;1;;;2;;1;;;;;;;1;;1;;;1;;1
+REAPER;RIPER;AUDIOVISUALES;;;;;1;;;2;;1;;;;;;;1;;1;;;1;;1
+SELENE;SELEN;AUDIOVISUALES;SOFTWARE_LIBRE;;;;1;;;1;;1;;;;;;;1;;1;;;1;;1
+SHOTCUT;;AUDIOVISUALES;SOFTWARE_LIBRE;;;;1;;;1;;1;;;;;;;1;;1;;;1;;1
+SIR;;AUDIOVISUALES;SOFTWARE_LIBRE;;;;1;;;;;1;;;;;;;1;;1;;;1;;1
+SONY VEGAS;SONI VEGAS;AUDIOVISUALES;;;;;1;;;2;;1;;;;;;;;;1;;;1;;1
+SOZI;SOSI;AUDIOVISUALES;SOFTWARE_LIBRE;;;;1;;;1;;1;;;;;;;1;;1;;;1;;1
+TELEVISIÓN;TV, TELE;AUDIOVISUALES;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+TUXGUITAR;TAXGUITAR;AUDIOVISUALES;;;;;1;;;2;;1;;;;;;;;;1;;;1;;1
+VIDEO;videos;AUDIOVISUALES;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+VIDEO PAD;VIDEOPAD;AUDIOVISUALES;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+ILLUSTRATOR;ILUSTRATOR;AUDIOVISUALES;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+QUICK ;QUIC;AUDIOVISUALES;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+STREAMING;STREMING;AUDIOVISUALES;COMUNICACION_INTERACTIVA;1;1;;1;;;1;;1;;1;;;;1;1;;1;;1;1;;
+HANGOUTS;HANGUTS, CHATS, CHAT;COMUNICACION_INTERACTIVA;;1;1;;1;1;;;;1;;1;;;;;;;;;1;;;
+TOKAPP;TOKAPP,TOKKAP,TOKAP,TOK-APP;COMUNICACION_INTERACTIVA;;1;1;;1;1;;;;1;;;;1;;;;;;;1;;;
+JITSI;GITSY,GITTSI, GITSI;COMUNICACION_INTERACTIVA;;1;1;;1;1;;;;;;1;;;;1;;;;;1;;;
+MEET;GOOGLE MEET;COMUNICACION_INTERACTIVA;;1;1;;1;1;;;;;;1;;;;1;;;;;1;;;
+ZOOM;;COMUNICACION_INTERACTIVA;;1;1;;1;1;;;;;;1;;;;1;;;;;1;;;
+SLACK;SLAC;COMUNICACION_INTERACTIVA;REDES;;;;1;;;1;;1;;1;1;1;;;;;;;;;;1
+EMAIL;CORREO ELECTRÓNICO, CORREO ELECTRONICO, CORREO DIGITAL;COMUNICACION_INTERACTIVA;;1;1;;1;1;;;;1;;;;1;;;;;;;1;;;1
+ARASAAC;ARAWORD, ARABOARD, PICTOSELECTOR, SAAC;COMUNICACION_INTERACTIVA;OFIMATICA;;;;;;1;1;1;1;;;;;;;1;1;;;;;;1
+GOOGLE DRIVE;DRIVE, nube;NUBE;OFIMATICA;1;1;;1;1;1;1;1;1;;1;;1;1;1;;;;;1;;;1
+propiedad intelectual;;NUBE;;;;;;1;;;1;;;;;;;;;;;;;1;;1
+EXCEL;excell, base de datos;OFIMATICA;TTDD_PED_EVAL;;;;1;;;1;;1;;;;1;1;;;;1;;;1;;1
+HOJAS DE CALCULO;hojas de calculo;OFIMATICA;TTDD_PED_EVAL;;;;1;;;1;;1;;;;1;1;;;;1;;;1;;1
+LIBRE OFFICE BASE;LIBRE OFFICE, OPEN OFFICE, libreoffice;OFIMATICA;SOFTWARE_LIBRE;;;;1;;;1;;1;;;;;;;1;;1;;;1;;1
+LIBRE OFFICE CALC;LIBRE OFFICE, OPEN OFFICE, libreoffice;OFIMATICA;SOFTWARE_LIBRE;;;;1;;;1;;1;;;;1;1;;1;;1;;;1;;1
+LIBRE OFFICE DRAW AND MATH;LIBRE OFFICE, OPEN OFFICE;OFIMATICA;SOFTWARE_LIBRE;;;;1;;;1;;1;;;;1;;;1;;1;;;1;;1
+LIBRE OFFICE IMPRESS;presentaciones, LIBRE OFFICE, OPEN OFFICE;OFIMATICA;SOFTWARE_LIBRE;;;;1;;;1;;1;;1;1;;;;1;;1;;;1;;1
+LIBRE OFFICE WRITER;documento de texto, LIBRE OFFICE, OPEN OFFICE;OFIMATICA;SOFTWARE_LIBRE;;;;1;;;1;;1;;1;1;1;;1;1;;1;;;1;;1
+OFFICE 365;OFICE 365,;OFIMATICA;;;;;1;;;1;;1;;1;1;1;1;;;;1;;1;1;;
+POWER POINT;POWERPOINT, PRESENTACIONES;OFIMATICA;TTDD_PED_EVAL;;;;1;;;1;;1;;1;1;1;;;;;1;;;1;;
+WORD;documento de texto;OFIMATICA;;;;;1;;;1;;1;;1;1;1;;1;;;1;;;1;;
+MUSESCORE;editor de partituras;OFIMATICA;SOFTWARE_LIBRE;;;;1;;;1;;1;;;;1;;;1;;1;;;1;;
+CANVA;Canvas;OFIMATICA;NUBE;1;1;;1;1;;1;;1;;1;1;1;;;;;1;;1;1;;
+GENIALLY;GENIALY, GENIALI,;OFIMATICA;TTDD_PED_EVAL;1;1;;1;1;;1;;1;;1;1;1;;;;1;1;;;1;;
+GOOGLE SHEETS;GOOGLE SHEET, GOOGLE SHETS, GOOGLE SHET, GOGLE SHEET, GOGLE SHET, GOLGLE SHETS, GOOGLE APPS, GOOGLE APP, documentos colaborativos, documento colaborativo;OFIMATICA;NUBE;1;1;;1;1;;1;;1;;;;1;1;;;;1;;1;1;;
+G-SUITE;G SUITE, GSUITE, google suite, GOOGLE SUIT, G.SUITE, G Suit,;OFIMATICA;NUBE;1;1;;1;1;;1;;1;1;1;1;1;1;1;;1;1;;1;1;;
+WORKSPACE;WORK SPACE, WORK-SPACE;OFIMATICA;NUBE;1;1;;1;1;;1;;1;1;1;1;1;1;1;;1;1;;1;1;;
+FORMULARIOS DE GOOGLE;GOOGLE FORMS, GOGLE FORMS, FORMS, ;OFIMATICA;TTDD_PED_EVAL;1;1;;1;1;;1;;1;1;1;;1;1;;;;1;;;1;;
+PRESENTACIONES DE GOOGLE;GOOGLE SLIDES, SLIDES;OFIMATICA;TTDD_PED_EVAL;1;1;;1;1;;1;;1;;1;1;1;;;;;1;;;1;;
+PADLET;;OFIMATICA;;;;;1;;;1;;1;;1;1;1;;;;;;;;;;
+MINDMEISTER;MINDMESTER;OFIMATICA;;;;;1;;;1;;1;;1;1;1;;;;;;;;;;
+DROPBOX;;OFIMATICA;;;;;1;;;1;;1;;1;;;;;;;;;;;;
+WIKISPACES;WIKISPACE, WIKIS, WIKI, wikipedia;OFIMATICA;NUBE;1;1;;1;1;;1;;1;;1;;;;;;;;;1;;;1
+PREZI;;OFIMATICA;NUBE;1;1;;1;1;;1;;1;;1;1;1;;;;;;;1;;;1
+COGGLE;COGLE;OFIMATICA;;;;;1;;;1;;1;;1;1;1;;;;;;;;;;1
+STORMBOARD;STORMBORD;OFIMATICA;;;;;1;;;1;;1;;1;;1;;;;;;;;;;1
+WETRANSFER;;OFIMATICA;;;;;1;;;;;1;;1;;;;;;;;;;;;1
+TRELLO;TRELO;OFIMATICA;COMUNICACION_INTERACTIVA;;;;1;;;1;;1;;1;1;1;;;;;;;;;;1
+OFIMATICA;Office;OFIMATICA;;;;;1;;;1;;1;;1;1;1;;1;;;1;;;1;;
+DECK.TOYS;DECK TOYS, DECKTOYS;OFIMATICA;;;;;;;1;2;2;1;1;1;1;1;1;1;1;1;1;1;1;;;1
+Materiales digitales;ARTEFACTOS DIGITALES;OFIMATICA;AUDIOVISUALES;;;;1;;;1;;1;;1;1;1;;1;;;1;;;1;;
+WORDPRESS;WORDPRES;REDES;SOFTWARE_LIBRE;1;1;;1;1;;1;;1;;1;1;1;;;1;;;;;;;
+BLOG;BLOGS;REDES;NUBE;2;1;;1;1;1;1;;1;1;1;1;1;;;;;;;1;1;;1
+CIBER;;REDES;;;;;1;1;;;;1;;;;;;;;;;;;;;1
+CIBERAYUDANTE;CIBER AYUDANTE, ciber-ayudante, ciberayudantes, ciberacoso, ciberbullying;REDES;;;;;1;1;;;;1;1;1;;;;;;;;;;;1;1
+CIBERSEGURIDAD;CIBER SEGURIDAD;REDES;;1;1;;1;2;;;;1;;;;;;;;;;;;;1;
+COMMUNITY MANAGER;COMUNITY MANAGER, CM ;REDES;NUBE;1;1;;1;1;;;;1;;;;;;;;;;;1;;;1
+COMPETENCIA DIGITAL;CD, CDD, digitalización, competencia informacional y digital;REDES;;1;;;1;1;;;;1;;;;;;;;;;;;;;
+COMPUTACIONAL;;REDES;;;;;1;;;;;1;;;;;;;;;;;;;;1
+E-LEARNING;ELEARNING;REDES;;;;;1;;;1;;1;1;;1;1;;;;;;;1;;;
+E-TWINNING;ETWINNING, ETWINING, E-TWINING, e Twinning, e Twining, Erasmus+, K1, K2, etwinnings, PROYECTO ERASMUS, K219, Erasmus-Plus, erasmus plus, Erasmusplus;REDES;;1;2;1;1;1;;;;1;1;3;;1;;;;;;;1;;;1
+EDUCABLOGERS;EDUCABLOGGERS, EDUCABLOGER, EDUCABLOGGERS;REDES;;1;1;;1;1;;;;1;;1;;;;;;;;;;;;1
+INFORMATICA;HERRAMIENTAS INFORMATICAS, HERRAMIENTA INFORMATICA, aplicaciones informáticas, INFORMATICO, INFORMÁTICO, kit de herramientas;REDES;;;;;1;;;;;1;;;;;;;;;;;;;;1
+REDES INFORMÁTICAS;;REDES;TTDD PED;;;;1;;;;;1;;;;;;;;;;;;;;1
+INTERNET;;REDES;;1;;;1;1;;;;1;;;;;;;;;;;;;;1
+REDES SOCIALES;RRSS, Facebook;REDES;;1;;;1;1;1;;1;1;;1;;;;;;;;;1;;1;1
+SEO;;REDES;;1;;;1;1;;;;1;;;;;;;;;;;;;;1
+SOPORTES INFORMATICOS;ordenador, proyector, ordenadores, monitores interactivos, dispositivos móviles, mesa digital, mesas digitales;REDES;;;;;1;1;;;;1;;;;;;;;;;;;;;1
+TAC;T.A.C, TAP, TAP-M7, tecnologias del aprendizaje, tictactep, tapm7;REDES;;1;;;1;1;;;;1;;;;;;;;;;;;;;1
+TIC;tics, TIC-TAC, TIC/TAC, tecnologia de l'aprenentatge i coneixement, medios tecnologicos, nuevas tecnologías, tecnologías del aprendizaje, tecnologías de la información, TIC-TAC-TEP, ICT, ICT resources, TICTAC, TICTAPTEP;REDES;;;;;1;1;;;;1;;;;;;;;;;;;;;1
+GOOGLE SITES;GOOGLE APPS;REDES;NUBE;1;1;;1;1;;;;;;;;1;;;;;;;1;;;1
+wix;;REDES;;1;1;;1;1;;;;;;;;1;;;;;;;1;;;1
+GOOGLE;;REDES;;1;;;1;;;;;;;;;;;;;;;;;;;1
+WEBGRAFÍA;;REDES;;1;1;;1;1;1;1;;1;;1;1;1;;;;;;;;;;1
+PAGINA WEB;paginas web, web, página web-blog, webs, web.online, webblog, webonline;REDES;ROBOTICA Y PROGRAMACION;1;1;;1;1;;1;;1;;1;1;1;;;;;;;;;;1
+Educación digital;;REDES;;1;;;1;1;;;;1;;;;;;;;;;;;;;1
+RECURSOS DIGITALES;RECURSO DIGITAL, Recursos materiales y digitales, actividades digitales, recursos 2.0, recursos 20;REDES;SOFTWARE;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+MEDIOS DIGITALES;MEDIO DIGITAL, medios informáticos, programas digitales;REDES;;;;;1;1;;;;1;;;;;;;;;;;;;;1
+NUEVAS TECNOLOGÍAS;NUEVAS TECNOLOGIAS;REDES;;;;;1;1;;;;1;;;;;;;;;;;;;;1
+ALPHABOT;ALFABOT, -ALPHABOT;ROBOTICA Y PROGRAMACION;;;;;1;;;;;1;;;;;;;;;1;;;;;1
+ARDUINO;BQ ZUM;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+BEE-BOT;BE BOT, BEE BOT, BEEBOT, beet-bot;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+ARGIS;ARGUIS;ROBOTICA Y PROGRAMACION;;;;;1;;;;;1;;;;;;;;;1;;;;;1
+BLYNK;BLINK;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+CODE;CODING, CODE.ORG;ROBOTICA Y PROGRAMACION;SOFTWARE_LIBRE;;;;1;;;1;;1;;;;;;;1;;1;;;;;1
+CURA;;ROBOTICA Y PROGRAMACION;;;;;1;;;;;1;;;;;;;;;1;;;;;1
+JAVA;OBJETOSJAVA;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+LEGO WEDO;LEGOWEDO, LEGO WE DO, LEGO WIDO, LEGOWIDO;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+MAKEY MAKEY;MAKI MAKI ;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+MASTERCAM;MASTER CAM;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+MBLOCK;EM BLOCK, EMBLOCK, EME BLOCK, EMEBLOCK;ROBOTICA Y PROGRAMACION;SOFTWARE_LIBRE;;;;1;;;1;;1;;;;;;;1;;1;;;1;;1
+MBOT;EM BOT, EMBOT, EME BOT, EMEBOT;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+MCLON;EM CLON, EMCLON, EME CLON, EMECLON;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+NODEMCU;;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+PYTHON;PITHON, PYTON, PITON;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+RASPERRY PI;RASPERY PI, RASPERRI PI, RASPERY PY, RASPERI PY, RASPERRY PY, RASPBERRY, -PIBRELLA, PIBRELLA;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;1;;1;;;;;1
+REALIDAD VIRTUAL;RV;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+REALIDAD AUMENTADA;RA;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+REBOTECH;REBOTEC;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+ROVER MARCIANO;;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+SCRATCH;SCRACH, SCRATC, SCRACHT;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+SCRIBUS;;OFIMATICA;;;;;1;;;1;;1;;;;;;;1;;;;;1;;
+SPHERO;;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+STARS;;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;1;;;;;;;1;;;1;;1
+TINKERCAD;;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+ESCORNABOT;SCORNABOT;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+BLUEBOT;BLUBOT, BLUE BOT, BLU BOT;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+D_BOT;D BOT, DBOT;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+DBOT;D_BOT, D BOT;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;
+OTTO;OTO;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+OTTONINJA;OTONINJA, OTTO NINJA, OTO NINJA, OTTONINYA, OTTO NINYA, OTONINYA, OTO NINYA;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+RANDOFO;;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+DOODLE ROBOT;DUDLE ROBOT, DOODEL ROBOT, DUDEL ROBOT;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+MINI KAME;MINI CAME;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+BABY SUMO;;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+ZOWIMANOIDE;;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+CYCLOPS;;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+ICEBOT;EYESBOT;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+CURIOSITY BTL;;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+F5 T;F5T;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+F5 T EASYBOT;F5T EASYBOT;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+CAR RC JUNIOR;;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+VELOCIBOTCBR;;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+SUMOBOTCBR;;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+STEAM;STIM;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+STEM;;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+MICROBIT;MICRO BIT, micro:bit;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+PENSAMIENTO COMPUTACIONAL;;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+WEAREABLE;WEREABOL;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+LENGUAJE DE PROGRAMACIÓN;;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+STI;;ROBOTICA Y PROGRAMACION;;;;1;1;;;1;;1;;;;;;;1;;;;;;;1
+PDI;PDIs, TABLET, SMARTPHONE, SMARTPHONES, pizarra digital, Ipad, tablets, pizarras digitales, tabletas;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;1;;;;;;;1
+JAVASCRIPT;JAVA SCRIPT;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+GIT;GITHUB;ROBOTICA Y PROGRAMACION;SOFTWARE_LIBRE;;;;1;;;;1;1;;;;;;;1;;;;;;;1
+CHROMEBOOK;CHORMEBOOKS, CHROME BOOK, CHROMEBOOKS, Chrombooks;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;1;;;;;;;1
+INVENTOR;;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+ROBÓTICA;ROBOTICA, ROBODOMOTICA, DOMOTICA, DOMOTICO, ROBOT, ROBOTS, DOMÓTICA, DOMÓTICO, ROBODOMÓTICO, ROBODOMÓTICA, KNX, LONWORKS, X10;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+APP;APPS, APLICACIONES DIGITALES, APLICACIONES TECNOLÓGICAS, APLICACIONES TIC, APLICACIÓN TIC, aplicaciones educativas, aplicación educativa;ROBOTICA Y PROGRAMACION;SOFTWARE;;;;1;;;1;;1;;;;;;;;;1;;;1;1;1
+BITBLOQ;BIT BLOQ, BITBLOCK;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+IMPRESIÓN 3D;IMPRESION 3D, impresión 3 d, impresion 3 d, impresión 3-d, impresion 3-d, impresión en 3D, ESCÁNER 3D, SCÁNER 3D, ESCANER 3D, ESCANER 3D, impresoras 3D.;ROBOTICA Y PROGRAMACION;;;;;1;;;;;1;;;;;;;;;1;;;;;1
+SMARTPHONE;;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;1;;;;;;;1
+DRON;DRONES;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;;;1
+WIFI;WI FI, WI-FI;ROBOTICA Y PROGRAMACION;;;;;1;1;;;;;;;;;;;;;;;;;;1
+ESERO;ESSERO, HESERO;ROBOTICA Y PROGRAMACION;OFIMATICA;;;;;;1;1;1;1;1;;1;1;1;1;1;1;1;1;;1;;1
+PROCESSING;PROCESING;ROBOTICA Y PROGRAMACION;SOFTWARE_LIBRE;;;;;;;;;;;;;;;;1;;;;;;;1
+GPS;AURASMA;ROBOTICA Y PROGRAMACION;;;;;;;1;1;;1;;;;;;;;;;;;;;1
+VNC;;ROBOTICA Y PROGRAMACION;SOFTWARE_LIBRE;;;;;;;;;1;;;;;;;1;;;;;;;1
+BLUETOOTH;BLUTOOTH, BLUETUTH, BLUTUTH, BLUTOOHT, BLUETOOHT;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+ELECTRÓNICA;ELECTRONICA;ROBOTICA Y PROGRAMACION;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+CONTASOL;;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+FACTURASOL;;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+NOMINASOL;;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+CONTAPLUS;;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+NOMINAPLUS;;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+FACTURAPLUS;;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+SEFED;;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+TIA PORTAL;TIAPORTAL;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+WINCC FLEX;WINCCFLEX;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+PLCSIM_ADVANCED_SAFETY_SINAMICS;;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+SIMIT_ODK_TARGET;;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+GEMELO DIGITAL;;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+AUTOCAD;;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+APLIFISA;;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+IONIC;;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+GIT;;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+GMAO;;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+FESTO;;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+PROLOQUO;PROLOQUO2GO, PROLOQUOTOGO, PROLOCUO;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+NODE.JS;NODE JS;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+SOLIDWORKS CAM PROFESSIONAL;SOLID WORKS, SOLIDWORKS;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+SUITE PLUS;SUITEPLUS;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+NAVISWORKS;NAVIS WORKS;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+CAD ELECTROTÉCNICO;CAD ELECTRICIDAD;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+SGA SIMULTRA;SIMULTRA, SGA;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+REVIT ARQ;REVITARQ;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+REVIT MEP;REVITMEP;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+DOCKERS;DOCKER;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+CHAMSYS;CHAMSIS;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+EPLAN;E-PLAN;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+FUSION 360;FUSION, FUSION360;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+MESHMIXER;MESMIXER, MESMISER, MEXMISER;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+CHITUBOX;;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+ZBRUSH CORE;ZBRUSH, ZBRUS, ZBRUS CORE;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+VITALINUX;LINUX;SOFTWARE;ROBOTICA Y PROGRAMACION;2;2;1;1;2;;1;;1;;1;;;;1;1;;1;;;;;
+Arcgis;ArcSig;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+UBIQUITI;UBIQUITI;SOFTWARE;;;;;;2;;;;;;;;;;;;;;;;;;
+HERRAMIENTAS INFORMATICAS;HERRAMIENTA INFORMATICA, herramientas digitales, herramienta digital, herramientas tecnológica, herramientas tecnológicas;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+HERRAMIENTAS DIGITALES;HERRAMIENTA DIGITAL, Herramientas 2.0, herramientas 2.0, digital, herramientas y los recursos digitales, 2.0, instrumentos digitales, recursos en red;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+SWISS PERFECT;SWIS PERFECT, swissperfect;SOFTWARE;;;;;1;1;;1;;1;;;;;1;;;;1;;;;;
+SOFTWARE;PROGRAMA INFORMÁTICO, PROGRAMA INFORMATICO, INFORMATIZADO, INFORMATIZADA;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+INVESMARK;INVES MARK, INVESMAR;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+LiderCalener;CALENER, CE3X, CE3, CERMA, lider calener;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+SANKORE;SANKORÉ;SOFTWARE_LIBRE;ROBOTICA Y PROGRAMACION;;;;1;;;1;;1;;1;;;;;1;;1;;;1;;1
+ULTIMAKER CURA;CURA, ULTIMAKERCURA;SOFTWARE_LIBRE;;;;;1;;;1;;1;;;;;;;1;;1;;;1;;1
+FREECAD;;SOFTWARE_LIBRE;;;;;;;;1;;1;;;;;;;1;;;;;;;1
+AEDUCAR;aducar, software libre educativo;TTDD PED;TTDD_PED_EVAL;3;2;1;1;2;;2;;1;1;1;1;1;1;1;;1;1;1;1;;;1
+GOOGLE CLASSROOM;GOOGLE APPS, GOOGLE APP, GOGLE CLASSROOM, GOOGLE CLASROOMS, GSUITE FOR EDUCATION, G-SUITE FOR EDUCATION, AULA VIRTUAL, CLASSROOM, CLASROOM, CLASSROM, google for education;TTDD PED;TTDD_PED_EVAL;1;1;1;1;1;;2;;1;1;1;1;1;1;1;;1;1;1;1;;;
+EDMODO;EDUCAPLAY, edmodo.;TTDD PED;TTDD_PED_EVAL;1;1;1;1;1;;2;;1;1;1;1;1;1;1;;;1;1;1;;;
+MOODLE;MODLE, MUDLE, MOODEL;TTDD PED;TTDD_PED_EVAL;1;1;1;1;1;;2;;1;1;1;1;1;1;1;;1;1;1;1;;;
+OFFICE 365 EDUCATION;OFICE 365, OFFICE 365;TTDD PED;;1;1;1;1;1;;2;;1;1;1;1;1;1;1;;;1;1;1;;;1
+KAHOOT;KAHOT;TTDD PED;TTDD_PED_EVAL;1;;;1;1;;2;;1;1;1;;1;1;1;;;1;;;;;1
+EDPUZZLE;EDPUZLE, EDPUZZL;TTDD PED;TTDD_PED_EVAL;1;;;1;;;2;;1;1;1;1;1;1;1;;1;1;;;;;1
+SYMBALOO;SYMBALO;TTDD PED;;1;;;1;;;;;1;;1;1;;;;;;;;1;;;1
+CLASSDOJO;CLASDOJO, CLASS- DOJO, CLAS-DOJO, class dojo;TTDD PED;TTDD_PED_EVAL;1;1;;1;1;;;;1;1;;;1;;;;;;;;;;1
+MICROSOFT TEAMS;plataforma teams, entorno teams, teams;TTDD PED;;1;1;;1;1;;;;1;;1;1;;;1;;;;;;;;1
+Proloquo;;TTDD PED;;1;;;1;1;;;;;;;;;;;2;;;;;;;1
+CBoard;;TTDD PED;;1;;;1;1;;;;;;;;;;;2;;;;;;;1
+Grid3;;TTDD PED;;1;;;1;1;;;;;;;;;;;2;;;;;;;
+Verbo (Eneso);;TTDD PED;;1;;;1;1;;;;;;;;;;;2;;;;;;;
+Visual Attention Therapy;;TTDD PED;;1;;;1;1;;;;;;;;;;;2;;;;;;;
+CPA;;TTDD PED;;1;;;1;1;;;;;;;;;;;2;;;;;;;
+LETMETALK;;TTDD PED;;1;;;1;1;;;;;;;;;;;2;;;;;;;
+Spreadthesign;;TTDD PED;;1;;;1;1;;;;;;;;;;;2;;;;;;;1
+Dictapicto;;TTDD PED;;1;;;1;1;;;;;;;;;;;2;;;;;;;1
+EDICO;;TTDD PED;;1;;;1;1;;;;;;;;;;;2;;;;;;;
+EBraille;;TTDD PED;;1;;;1;1;;;;;;;;;;;2;;;;;;;
+JAWS;;TTDD PED;;1;;;1;1;;;;;;;;;;;2;;;;;;;1
+Voiceover;;TTDD PED;;1;;;1;1;;;;;;;;;;;2;;;;;;;1
+Orca;;TTDD PED;;1;;;1;1;;;;;;;;;;;2;;;;;;;
+Agenda TEA;;TTDD PED;;1;;;1;1;;;;;;;;;;;2;;;;;;;1
+h5p;;TTDD PED;AUDIOVISUALES;1;;;1;1;;;;1;1;;;;;;1;;;;;;;
+FLIPPED;FLIPED, AULA INVERTIDA, CLASE INVERTIDA, FLIPPEDS;TTDD PED;;;;1;;;2;;1;1;1;;;;;;;;;;;;;1
+BITMOJI;BITEMOJI;TTDD PED;;;;;;;1;1;1;;;;;;;;;;;;;;;
+TRIVINET;;TTDD PED;TTDD_PED_EVAL;1;;;1;1;;2;;1;1;1;;1;1;1;;;1;;;;;
+QUIZIZZ;QUIZIZ;TTDD_PED_EVAL;;1;;;1;1;;2;;1;1;2;;1;1;1;;1;1;;;;;
+PLICKERS;PLICKER;TTDD_PED_EVAL;;1;;;1;1;;2;;1;;2;;1;1;1;;;1;;;;;
+ADDITIO;ADITIO;TTDD_PED_EVAL;;1;;;1;1;;;;1;1;;1;1;1;1;;;;1;;;;
+IDOCEO;I DOCEO;TTDD_PED_EVAL;;1;;;1;1;;;;1;1;;1;1;1;1;;;;1;;;;
+CORUBRICS;Corubics;TTDD_PED_EVAL;;1;;;1;1;;;;;;;;1;1;1;;;;;;;;
+PORTAFOLIO DIGITAL;PORTFOLIO DIGITAL;TTDD_PED_EVAL;;1;;;1;1;;;;;;;;1;1;1;;;;;;;;1
+LIVEWORKSHEETS;;TTDD_PED_EVAL;;1;;;1;1;;;;;;;;1;1;1;;;;;;;;1
+SOCRATIVE;;TTDD_PED_EVAL;;1;;;1;1;;;;;;;;1;1;1;;;;;;;;
+Imágenes digitales;digital de la imagen, bancos de imágenes, DIGITAL STORYTELLING;AUDIOVISUALES;;;;;1;;;1;;1;;;;;;;;;1;;;1;;1
+Recursos materiales y digitales;plataforma online, plataforma digital, plataformas digitales, learning management system, LMS, plataformas on-line, plataforma on-line,  Mobility tools, mobile learning, herramientas y los recursos digitales, publicaciones digitales, publicación digital, publicación online de contenidos, Plataformas educativas, movility tools, plataformas online, experiencia digital, experiencias digitales, móvil, aprendizaje móvil, capacidades digitales, aula mentor, aularagon, aularagón;TTDD PED;;1;;;1;1;;;;1;;1;1;;;1;;;;;;;;1
+Firma electrónica;Sede electrónica, firma digital;ADMINISTRACION;;;;;;1;;;;;;;;;;;;;;;;;1;
+semipresencial;semipresenciales, conectad@;NUBE;;;;;;;;;;1;1;;1;;;;;;1;1;1;;;
+NARRATIVA DIGITAL;;COMUNICACION_INTERACTIVA;;;;;;1;;1;;;;1;;;;;;;1;1;1;1;1;
+CÓDIGO QR;QR, CÓDIGOS QR;COMUNICACION_INTERACTIVA;;1;;;;;1;;1;;;;;;;;1;;;1;1;;;
+Administración electrónica;;ADMINISTRACION;;1;;;1;1;;;;1;;;;;;;;;;;;;;
+Videollamada;Sesión virtual, jornada virtual ;COMUNICACION_INTERACTIVA;;1;1;;1;1;;;;;;1;;;;1;;1;;;;;;
+SOFTWARE libre;opensource, open source;SOFTWARE_LIBRE;;;;;1;;;1;;1;;;;;;;1;;1;;;;;
+software libre educativo;;SOFTWARE_LIBRE;TTDD PED;2;2;1;1;2;;2;;1;1;1;1;1;1;1;1;1;1;1;1;;;1
+BUS DE;BUSES DE, PROFIBUS, PROFINET, ;COMUNICACION_INTERACTIVA;ROBOTICA Y PROGRAMACION;;;;1;1;;;;;;;;;;;;;1;;;;;1
+BIG DATA;BIGDATA;ROBOTICA Y PROGRAMACION;;;;;;;3;;;;;;;;;;;;;;;;;
+INTELIGENCIA ARTIFICIAL;IA;ROBOTICA Y PROGRAMACION;;;;;;;;;;;;;;;;;;;;;;1;;
+BLOCKCHAIN;BLOCK CHAIN;ROBOTICA Y PROGRAMACION;;;;;;;3;;;;;;;;;;;;;;;;;
+FPEMPLEA;FP EMPLEA;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;;;;;;
+SYSMAC STUDIO;SISMAC STUDIO, SYSMACSTUDIO;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+GEOGEBRA;;TTDD PED;SOFTWARE_LIBRE;;;;1;;2;2;1;1;2;;2;;;;1;;1;;;;;
+GEOGEBRA EXAM;;TTDD_PED_EVAL;SOFTWARE_LIBRE;;;;1;;2;2;1;1;2;;2;2;2;1;1;;1;;;;;
+GEOCACHING;GYMKHANA GPS, GIMKANA GPS, GYMKANA GPS, GYNKANA GPS, GEOCACHE;TTDD PED;ROBOTICA Y PROGRAMACION;;;;1;;1;;;1;;1;;1;;;;;;1;1;;1;1
+Pinterest;Pinteres;REDES;;1;1;;1;1;1;1;;1;;;;;;;;;;;1;1;;
+Plataforma Digital;;;;1;;;1;1;;;;1;;1;1;;;1;;;;;;;;1
+Plataforma Online;;;;1;;;1;1;;;;1;;1;1;;;1;;;;;;;;1
+CIBERMENTORÍA;;TTDD PED;;;;;;;;;;;;;;;;;;;;;;;;
+CÁMARA;Cámara de video, agrupación camerística, camerística, cámara fotográfica;AUDIOVISUALES;;;;;;;;;;;;;;;;;;;;;;;;
+CENTROSNET;;ADMINISTRACION;;;;;;;;;;;;;;;;;;;;;;;;
+CENTROSNET;GIR-CONTABLE,  GIRCONTABLE;ADMINISTRACION;;1;;;1;1;;;;;;;;;;;;;;;;;;
+libre office;;OFIMATICA;SOFTWARE_LIBRE;;;;1;;;1;;1;;1;1;1;1;1;1;;1;;;1;;1
+PUBLISHER;PUBLISER;OFIMATICA;;;;;1;;;1;;1;;;;;;;;;;;;1;;1
+ANDROID STUDIO;ANDROIDSTUDIO, SDK ANDROID, SDKANDROID;SOFTWARE;;;;;1;;;1;;1;;;;;;;;;1;;;1;;
+chat;;COMUNICACION_INTERACTIVA;;1;1;;1;1;;;;1;;1;;;;;;;;;1;;;
+GIR CONTABLE;;ADMINISTRACION;;1;;;1;1;;;;;;;;;;;;;;;;;;
+GIR ADMISION;;ADMINISTRACION;;1;;;1;1;;;;;;;;;;;;;;;;;;
+EDICIÓN DE AUDIO;;AUDIOVISUALES;;;;;1;;;1;;1;;;;;;;1;;1;;;1;;1
+EDICIÓN DE VIDEO ;;AUDIOVISUALES;;;;;1;;;2;;1;;;;;;;;;1;;;1;;1
