@@ -2,7 +2,7 @@ from dash import Dash, dcc, html, Input, Output
 import dash_bootstrap_components as dbc
 import pandas as pd
 
-from components import generate_filtered_table
+from components import generate_filtered_table, search_inputs_rows, navbar
 
 # Create this dict as an ordered dict
 int_competencias = {
@@ -41,30 +41,15 @@ df["bag_of_words"] = (
 df["bag_of_words"] = df["bag_of_words"].apply(lambda x: [x.strip() for x in x])
 
 app.layout = html.Div(
+    [navbar] +
+    search_inputs_rows + 
     [
-        dbc.Row(
-            [
-                dbc.Col(
-                    [
-                        dcc.Input(
-                            id="palabra-clave",
-                            type="text",
-                            placeholder="Introduce una palbra clave",
-                        ),
-                    ],
-                    lg=4,
-                    md=4,
-                    xs=12,
-                ),
-                dbc.Col([], lg=3, md=4, xs=12),
-                dbc.Col([], lg=3, md=4, xs=12),
-            ]
-        ),
+        html.Br(),
         dbc.Row(
             [
                 dbc.Col([html.Div(id="output")]),
             ]
-        ),
+        ),        
     ]
 )
 

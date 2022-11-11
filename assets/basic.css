@@ -17,3 +17,8 @@ a:visited {
 a:hover {
     color: #1D2D44;
 }
+
+th, td {
+    padding: 15px;
+    text-align: left;
+  }
