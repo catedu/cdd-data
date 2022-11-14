@@ -27,10 +27,12 @@ def convert_int_to_competencias(df):
 
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.MATERIA])
+app.title = "Mapeo de actividades"
 
 server = app.server
 
 df = pd.read_csv("Dicc.csv", sep=";")
+COMPETENCIAS = pd.read_csv("competencias.csv", sep=",")
 
 
 df["bag_of_words"] = (

@@ -1,19 +1,15 @@
 import dash_bootstrap_components as dbc
 from dash import dash_table, html,dcc
+import pandas as pd
 
-LISTA_COMPETENCIAS = [
-    "Búsqueda y selección de contenidos o información",
-    "Creación o modificación de contenido",
-    "Protección de datos, gestión y compartición",
-    "Proceso de Enseñanza-Aprendizaje",
-    "Evaluación, orientación y apoyo",
-    "Aprendizaje entre iguales",
-    "Aprendizaje autorregulado",
-    "Estrategias de Evaluación",
-    "Accesibilidad e inclusión",
-    "Recursos para que el alumnado desarrolle de forma autónoma",
-    "Comunicación con el alumnado y/o familias",
+NIVEL_DE_PROGRESION = [
+    "Conocimiento teórico",
+    "Uso guiado",
+    "Uso autónomo",
+    "Aplicación en el aula",
 ]
+
+df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/solar.csv')
 
 def generate_table(df):
     tabla = dash_table.DataTable(
@@ -110,6 +106,15 @@ navbar = dbc.NavbarSimple(
     dark=False,
 )
 
+# TODO: Si se ha trabajado la actividad con alumnado y 
+# se demuestra que han alcanzado el nivel de progresión
+# se mapea el área 6 con lo que venga, si no se borra
+actividad_con_alumnado = dbc.Switch(
+                    id="bool-con-alumnado",
+                    label="¿Adquiere esta competencia el alumnado?",
+                    value=False,
+                )
+
 # Por debajo de 10 horas la puntuación máxima es un A2 ¿Máximo de horas?
 horas = dbc.Input(
             id="n-horas",
@@ -128,45 +133,6 @@ modalidad = dcc.Dropdown(
                 placeholder="Selecciona la modalidad",
                 style={"margin": "10px", "margin-right": "30px"},
             )
-
-palabra_clave = dbc.Input(
-                    id="palabra-clave",
-                    type="text",
-                    placeholder="Introduce una palbra clave",
-                    style={"margin": "10px", "margin-right": "30px"},
-                )
-
-competencias = dcc.Dropdown(
-                [
-                    {"label": item, "value": i+1} for i, item in enumerate(LISTA_COMPETENCIAS)
-                ],
-                id="competencias",
-                placeholder="Selecciona la competencia",
-                style={"margin": "10px", "margin-right": "30px"},
-            )
-
-nivel_de_progresion = dcc.Dropdown(
-                [
-                    {"label": item, "value": i+1} for i, item in enumerate([
-                        "Conocimiento teórico",
-                        "Uso guiado",
-                        "Uso autónomo",
-                        "Aplicación en el aula",
-                    ])
-                ],
-                id="n_progresion",
-                placeholder="Selecciona el nivel de progresión",
-                style={"margin": "10px", "margin-right": "30px"},
-            )
-
-# TODO: Si se ha trabajado la actividad con alumnado y 
-# se demuestra que han alcanzado el nivel de progresión
-# se mapea el área 6 con lo que venga, si no se borra
-actividad_con_alumnado = dbc.Switch(
-                    id="bool-con-alumnado",
-                    label="¿Adquiere esta competencia el alumnado?",
-                    value=False,
-                )
 
 search_inputs_rows = [
     dbc.Row(
@@ -195,22 +161,14 @@ search_inputs_rows = [
                 dbc.Col(
                     [
                         # TODO: meter una data table con las competencias
-                        dash_table.DashTable(
-
+                        dash_table.DataTable(
+                                df.to_dict('records'), [{"name": i, "id": i} for i in df.columns]
                             ),
                     ],
                     lg=3,
                     md=4,
                     xs=12,
                 ),
-                dbc.Col(
-                    [
-                        palabra_clave,
-                    ], lg=3, md=4, xs=12),
-                dbc.Col(
-                    [
-                        nivel_de_progresion,
-                    ], lg=3, md=4, xs=12),
             ],  justify="center", style={"margin": "10px"}
         ),
 ]
