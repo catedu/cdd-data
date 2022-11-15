@@ -46,15 +46,18 @@ app.layout = html.Div(
 
 @app.callback(
     Output("output", "children"),
-    [Input(f"palabra-clave-{i}", "value") for i in range(number_of_input_rows)],
+    Input(
+        "palabras-clave",
+        "value",
+    ),
 )
-def show_table(*args):
-    print(args)
-    if not any(args):
+def show_table(palabras_clave):
+    if palabras_clave is None or len(palabras_clave) == 0:
         return html.Div()
     dfs = []
-    args = [x for x in args if x]
-    for palabra_clave in args:
+    palabras_clave = list(palabras_clave.split(","))
+    palabras_clave = [x.strip() for x in palabras_clave if len(x.strip()) > 0]
+    for palabra_clave in palabras_clave:
         palabra_clave = palabra_clave.strip().lower()
         df_filtered = df_keywords.loc[
             df_keywords["bag_of_words"].apply(lambda x: palabra_clave in x),

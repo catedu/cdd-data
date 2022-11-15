@@ -141,16 +141,11 @@ modalidad = dcc.Dropdown(
 
 ###############
 
-input_group = html.Div(
-    [
-        dbc.Input(
-            id=f"palabra-clave-{i}",
-            type="text",
-            placeholder="Introduce palabras clave",
-            style={"margin": "10px", "margin-right": "30px"},
-        )
-        for i in range(number_of_input_rows)
-    ]
+input_group = dbc.Input(
+    id=f"palabras-clave",
+    type="text",
+    placeholder="Introduce palabras clave separadas por comas",
+    style={"margin": "10px", "margin-right": "30px"},
 )
 
 ###############
