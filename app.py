@@ -7,6 +7,7 @@ from data import (
     int_competencias,
     get_df_keywords,
     get_df_competencias,
+    number_of_input_rows,
 )
 
 
@@ -45,17 +46,28 @@ app.layout = html.Div(
 
 @app.callback(
     Output("output", "children"),
-    Input("palabra-clave", "value"),
+    [Input(f"palabra-clave-{i}", "value") for i in range(number_of_input_rows)],
 )
-def show_table(palabra_clave):
-    if palabra_clave is None or palabra_clave.strip() == "":
-        return None
-    palabra_clave = palabra_clave.strip().lower()
-    df_filtered = df_keywords.loc[
-        df_keywords["bag_of_words"].apply(lambda x: palabra_clave in x),
-        df_keywords.filter(regex="\d\.\d").columns,
-    ]
-    df_filtered = convert_int_to_competencias(df_filtered)
+def show_table(*args):
+    print(args)
+    if not any(args):
+        return html.Div()
+    dfs = []
+    args = [x for x in args if x]
+    for palabra_clave in args:
+        palabra_clave = palabra_clave.strip().lower()
+        df_filtered = df_keywords.loc[
+            df_keywords["bag_of_words"].apply(lambda x: palabra_clave in x),
+            df_keywords.filter(regex="\d\.\d").columns,
+        ]
+        dfs.append(df_filtered)
+
+    df_filtered = pd.concat(dfs, axis=0)
+
+    # Hallamos el valor mayor en cada columna
+    serie = df_filtered[df_filtered.filter(regex="\d\.\d").columns].max()
+
+    df_filtered = convert_int_to_competencias(pd.DataFrame(serie).transpose())
     return generate_filtered_table(df_filtered)
 
 

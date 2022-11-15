@@ -11,6 +11,8 @@ int_competencias = {
     6: "C2",
 }
 
+number_of_input_rows = 10
+
 
 def get_df_competencias():
     return pd.read_csv("competencias.csv", sep=",")

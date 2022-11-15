@@ -1,6 +1,6 @@
 import dash_bootstrap_components as dbc
 from dash import dash_table, html, dcc
-import pandas as pd
+from data import number_of_input_rows
 
 NIVEL_DE_PROGRESION = [
     "Conocimiento teórico",
@@ -141,13 +141,16 @@ modalidad = dcc.Dropdown(
 
 ###############
 
-params = ["Competencias", "Nivel de progresión", "Etiquetas"]
-
-input_table = dash_table.DataTable(
-    id="table-editing-simple",
-    columns=([{"id": p, "name": p} for p in params]),
-    data=[dict(Model=i, **{param: 0 for param in params}) for i in range(1, 5)],
-    editable=True,
+input_group = html.Div(
+    [
+        dbc.Input(
+            id=f"palabra-clave-{i}",
+            type="text",
+            placeholder="Introduce palabras clave",
+            style={"margin": "10px", "margin-right": "30px"},
+        )
+        for i in range(number_of_input_rows)
+    ]
 )
 
 ###############
@@ -188,10 +191,10 @@ search_inputs_rows = [
             dbc.Col(
                 [
                     # TODO: meter una data table con las competencias
-                    input_table,
+                    input_group,
                 ],
-                lg=12,
-                md=12,
+                lg=3,
+                md=4,
                 xs=12,
             ),
         ],
