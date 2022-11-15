@@ -22,3 +22,9 @@ th, td {
     padding: 15px;
     text-align: left;
   }
+
+.Select-menu-outer {
+    display : block !important;
+    color: #999999;
+}
+    

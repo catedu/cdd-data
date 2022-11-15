@@ -1,4 +1,4 @@
-from dash import Dash, dcc, html, Input, Output
+from dash import Dash, dcc, html, Input, Output, State
 import dash_bootstrap_components as dbc
 import pandas as pd
 
@@ -6,8 +6,7 @@ from components import generate_filtered_table, search_inputs_rows, navbar
 from data import (
     int_competencias,
     get_df_keywords,
-    get_df_competencias,
-    number_of_input_rows,
+    df_competencias,
 )
 
 
@@ -23,7 +22,6 @@ def convert_int_to_competencias(df):
 
 
 df_keywords = get_df_keywords()
-df_competencias = get_df_competencias()
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.MATERIA])
 app.title = "Mapeo de actividades"
@@ -72,6 +70,18 @@ def show_table(palabras_clave):
 
     df_filtered = convert_int_to_competencias(pd.DataFrame(serie).transpose())
     return generate_filtered_table(df_filtered)
+
+
+@app.callback(
+    Output("adding-rows-table", "data"),
+    Input("editing-rows-button", "n_clicks"),
+    State("adding-rows-table", "data"),
+    State("adding-rows-table", "columns"),
+)
+def add_row(n_clicks, rows, columns):
+    if n_clicks > 0:
+        rows.append({c["id"]: "" for c in columns})
+    return rows
 
 
 if __name__ == "__main__":

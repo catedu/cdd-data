@@ -1,6 +1,13 @@
 import pandas as pd
 from collections import OrderedDict
 
+NIVEL_DE_PROGRESION = [
+    "Conocimiento teórico",
+    "Uso guiado",
+    "Uso autónomo",
+    "Aplicación en el aula",
+]
+
 # Create this dict as an ordered dict
 int_competencias = {
     1: "A1",
@@ -10,8 +17,6 @@ int_competencias = {
     5: "C1",
     6: "C2",
 }
-
-number_of_input_rows = 10
 
 
 def get_df_competencias():
@@ -31,5 +36,21 @@ def get_df_keywords():
     return df_keywords
 
 
-def get_input_df():
-    pass
+def get_input_df(df_competencias, lista_niveles):
+    niveles_que_faltan = len(df_competencias["COMPETENCIAS AGRUPADAS"]) - len(
+        lista_niveles
+    )
+    lista_niveles.extend([""] * niveles_que_faltan)
+    # Generate a Dataframe from two lists
+    return pd.DataFrame(
+        OrderedDict(
+            {
+                "Competencias": df_competencias["COMPETENCIAS AGRUPADAS"],
+                "Nivel de progresión": lista_niveles,
+            }
+        )
+    )
+
+
+df_competencias = get_df_competencias()
+input_df = get_input_df(df_competencias, NIVEL_DE_PROGRESION)

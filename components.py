@@ -1,13 +1,8 @@
 import dash_bootstrap_components as dbc
 from dash import dash_table, html, dcc
-from data import number_of_input_rows
+from slugify import slugify
 
-NIVEL_DE_PROGRESION = [
-    "Conocimiento teórico",
-    "Uso guiado",
-    "Uso autónomo",
-    "Aplicación en el aula",
-]
+from data import input_df, NIVEL_DE_PROGRESION
 
 
 def generate_table(df):
@@ -139,16 +134,14 @@ modalidad = dcc.Dropdown(
     style={"margin": "10px", "margin-right": "30px"},
 )
 
-###############
-
 input_group = dbc.Input(
-    id=f"palabras-clave",
+    id="palabras-clave",
     type="text",
     placeholder="Introduce palabras clave separadas por comas",
     style={"margin": "10px", "margin-right": "30px"},
 )
 
-###############
+print(input_df)
 
 search_inputs_rows = [
     dbc.Row(
@@ -185,11 +178,42 @@ search_inputs_rows = [
         [
             dbc.Col(
                 [
-                    # TODO: meter una data table con las competencias
                     input_group,
                 ],
-                lg=3,
+                lg=4,
                 md=4,
+                xs=12,
+            ),
+            dbc.Col(
+                [
+                    dash_table.DataTable(
+                        id="adding-rows-table",
+                        columns=[
+                            {"name": i, "id": slugify(i), "presentation": "dropdown"}
+                            for i in input_df.columns
+                        ],
+                        data=input_df[:5].to_dict("records"),
+                        editable=True,
+                        row_deletable=True,
+                        dropdown={
+                            "competencias": {
+                                "options": [
+                                    {"label": i, "value": i}
+                                    for i in input_df["Competencias"].unique()
+                                ]
+                            },
+                            "nivel-de-progresion": {
+                                "options": [
+                                    {"label": i, "value": i}
+                                    for i in input_df["Nivel de progresión"]
+                                ]
+                            },
+                        },
+                    ),
+                    dbc.Button("Add Row", id="editing-rows-button", n_clicks=0),
+                ],
+                lg=8,
+                md=8,
                 xs=12,
             ),
         ],
