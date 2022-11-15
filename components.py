@@ -1,5 +1,5 @@
 import dash_bootstrap_components as dbc
-from dash import dash_table, html,dcc
+from dash import dash_table, html, dcc
 import pandas as pd
 
 NIVEL_DE_PROGRESION = [
@@ -9,7 +9,6 @@ NIVEL_DE_PROGRESION = [
     "Aplicación en el aula",
 ]
 
-df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/solar.csv')
 
 def generate_table(df):
     tabla = dash_table.DataTable(
@@ -64,26 +63,29 @@ def generate_filtered_table(df):
         5: "#F0EBD8",
         6: "#F0EBD8",
     }
-    
+
     def generate_area_table(df, numero_area):
         df_copy = df.filter(regex=f"{numero_area}\.\d")
         tabla = html.Table(
             # Header
-            [html.Tr([html.Th(col) for col in df_copy.columns])]
-            +
+            [html.Tr([html.Th(col) for col in df_copy.columns])] +
             # Body
             [
                 html.Tr([html.Td(df_copy.iloc[i][col]) for col in df_copy.columns])
                 for i in range(len(df_copy))
             ],
-            style={"width": "100%", "border": "1px solid black", "background":area_colors[numero_area]},
+            style={
+                "width": "100%",
+                "border": "1px solid black",
+                "background": area_colors[numero_area],
+            },
         )
         return tabla
-
 
     tablas = [generate_area_table(df, i) for i in range(1, 7)]
 
     return tablas
+
 
 navbar = dbc.NavbarSimple(
     [
@@ -106,70 +108,94 @@ navbar = dbc.NavbarSimple(
     dark=False,
 )
 
-# TODO: Si se ha trabajado la actividad con alumnado y 
+# TODO: Si se ha trabajado la actividad con alumnado y
 # se demuestra que han alcanzado el nivel de progresión
 # se mapea el área 6 con lo que venga, si no se borra
 actividad_con_alumnado = dbc.Switch(
-                    id="bool-con-alumnado",
-                    label="¿Adquiere esta competencia el alumnado?",
-                    value=False,
-                )
+    id="bool-con-alumnado",
+    label="¿Adquiere esta competencia el alumnado?",
+    value=False,
+)
 
 # Por debajo de 10 horas la puntuación máxima es un A2 ¿Máximo de horas?
 horas = dbc.Input(
-            id="n-horas",
-            type="number",
-            placeholder="Introduce el número horas",
-            min=0, max=100, step=10,
-            style={"margin": "10px", "margin-right": "30px"},
-        )
+    id="n-horas",
+    type="number",
+    placeholder="Introduce el número horas",
+    min=0,
+    max=100,
+    step=10,
+    style={"margin": "10px", "margin-right": "30px"},
+)
 
 
 modalidad = dcc.Dropdown(
-                [
-                    {"label": item, "value": i+1} for i, item in enumerate(["Presencial", "Online", "Mixto", "Grupo de trabajo"])
-                ],
-                id="modalidad",
-                placeholder="Selecciona la modalidad",
-                style={"margin": "10px", "margin-right": "30px"},
-            )
+    [
+        {"label": item, "value": i + 1}
+        for i, item in enumerate(["Presencial", "Online", "Mixto", "Grupo de trabajo"])
+    ],
+    id="modalidad",
+    placeholder="Selecciona la modalidad",
+    style={"margin": "10px", "margin-right": "30px"},
+)
+
+###############
+
+params = ["Competencias", "Nivel de progresión", "Etiquetas"]
+
+input_table = dash_table.DataTable(
+    id="table-editing-simple",
+    columns=([{"id": p, "name": p} for p in params]),
+    data=[dict(Model=i, **{param: 0 for param in params}) for i in range(1, 5)],
+    editable=True,
+)
+
+###############
 
 search_inputs_rows = [
     dbc.Row(
-            [
-                dbc.Col(
-                    [
-                        horas,
-                    ],
-                    lg=3,
-                    md=4,
-                    xs=12,
-                ),
-                dbc.Col(
-                    [
-                        modalidad,
-                    ], lg=3, md=4, xs=12),
-                dbc.Col(
-                    [
-                        html.Br(),
-                        actividad_con_alumnado,
-                    ], lg=3, md=4, xs=12),
-            ], justify="center", style={"margin": "10px"}
-        ),
+        [
+            dbc.Col(
+                [
+                    horas,
+                ],
+                lg=3,
+                md=4,
+                xs=12,
+            ),
+            dbc.Col(
+                [
+                    modalidad,
+                ],
+                lg=3,
+                md=4,
+                xs=12,
+            ),
+            dbc.Col(
+                [
+                    actividad_con_alumnado,
+                ],
+                lg=3,
+                md=4,
+                xs=12,
+            ),
+        ],
+        justify="center",
+        style={"margin": "10px"},
+    ),
     dbc.Row(
-            [
-                dbc.Col(
-                    [
-                        # TODO: meter una data table con las competencias
-                        dash_table.DataTable(
-                                df.to_dict('records'), [{"name": i, "id": i} for i in df.columns]
-                            ),
-                    ],
-                    lg=3,
-                    md=4,
-                    xs=12,
-                ),
-            ],  justify="center", style={"margin": "10px"}
-        ),
+        [
+            dbc.Col(
+                [
+                    # TODO: meter una data table con las competencias
+                    input_table,
+                ],
+                lg=12,
+                md=12,
+                xs=12,
+            ),
+        ],
+        justify="center",
+        style={"margin": "10px"},
+    ),
 ]
-            

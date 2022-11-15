@@ -1,92 +1,42 @@
-from pathlib import Path
-
-from dash import Dash, dcc, html, Input, Output, dash_table
+from dash import Dash, dcc, html, Input, Output
 import dash_bootstrap_components as dbc
-import plotly.express as px
-import numpy as np
 import pandas as pd
 
-from components import navbar, generate_table
-
-DATA_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR-BAUvNUjp2AeV_daeeqHReX0M3ew3ZpEL3nfkrz96uUd816mV_hV1uWMvbsACphEBGjqHJBswGwFz/pub?gid=614465369&single=true&output=csv"
-
-
-app = Dash(__name__, external_stylesheets=[dbc.themes.MATERIA])
-
-server = app.server
+from components import generate_filtered_table, search_inputs_rows, navbar
+from data import (
+    int_competencias,
+    get_df_keywords,
+    get_df_competencias,
+)
 
 
-def get_data():
-    if not Path("data.csv").exists():
-        pd.read_csv(DATA_URL).to_csv("data.csv", index=False)
-    df = pd.read_csv("data.csv")
-    df = df[(df["Curso Escolar"] == "2022-23") & (df["Convocatoria"] == 1)]
-    df["Título"] = df["Curso"]
-    df["Curso"] = df[["Moodle_url", "Curso"]].apply(
-        lambda x: f"[{x['Curso']}]({x['Moodle_url']})", axis=1
+def convert_int_to_competencias(df):
+    df.iloc[:, -23:] = (
+        df.filter(regex="\d\.\d")
+        .fillna(0)
+        .astype(int)
+        .applymap(int_competencias.get)
+        .fillna("")
     )
-    df["Categorías"] = df["Etiquetas"]
     return df
 
 
-df = get_data()
+df_keywords = get_df_keywords()
+df_competencias = get_df_competencias()
+
+app = Dash(__name__, external_stylesheets=[dbc.themes.MATERIA])
+app.title = "Mapeo de actividades"
+
+server = app.server
 
 app.layout = html.Div(
-    [
-        navbar,
+    [navbar]
+    + search_inputs_rows
+    + [
+        html.Br(),
         dbc.Row(
             [
-                dbc.Col(
-                    [
-                        dbc.Alert(
-                            "Ésta es una web provisional. Para ver bien los datos accede desde un ordenador o activa la 'Vista Ordenador' en el navegador de tu móvil",
-                            color="warning",
-                        ),
-                        dcc.Dropdown(
-                            df["Título"].unique(),
-                            id="titulo",
-                            placeholder="Selecciona un curso",
-                        ),
-                        html.Br(),
-                        dcc.Dropdown(
-                            df["Categorías"].unique(),
-                            id="categoria",
-                            placeholder="Selecciona una categoría",
-                        ),
-                    ],
-                    width=6,
-                    style={"padding": "10px", "margin": "10px"},
-                ),
-                dbc.Col(
-                    [
-                        html.Video(
-                            src="assets/videos/curso.mp4",
-                            controls=True,
-                            style={"width": "100%"},
-                        ),
-                    ],
-                    width=4,
-                    style={"padding": "10px", "margin": "10px"},
-                ),
-            ],
-            justify="center",
-        ),
-        dbc.Row(
-            [
-                html.Br(),
-                dbc.Col([], width=1),
-                html.Div(
-                    id="output-table",
-                    style={
-                        "padding": "0px, 10px, 10px, 10px",
-                        "margin": "0px, 10px, 10px, 10px",
-                    },
-                ),
-            ]
-        ),
-        dbc.Row(
-            [
-                html.Br(),
+                dbc.Col([html.Div(id="output")]),
             ]
         ),
     ]
@@ -94,21 +44,20 @@ app.layout = html.Div(
 
 
 @app.callback(
-    Output(component_id="output-table", component_property="children"),
-    # Output(component_id='titulo', component_property='value'),
-    # Output(component_id='categoria', component_property='value'),
-    Input(component_id="titulo", component_property="value"),
-    Input(component_id="categoria", component_property="value"),
+    Output("output", "children"),
+    Input("palabra-clave", "value"),
 )
-def update_output_div(titulo, categoria):
-    """Filter dataframe by an unkown number of conditions"""
-    df_copy = df.copy()
-    if titulo:
-        df_copy = df_copy[df_copy["Título"] == titulo]
-    if categoria:
-        df_copy = df_copy[df_copy["Categorías"] == categoria]
-    return generate_table(df_copy)  # , "", ""
+def show_table(palabra_clave):
+    if palabra_clave is None or palabra_clave.strip() == "":
+        return None
+    palabra_clave = palabra_clave.strip().lower()
+    df_filtered = df_keywords.loc[
+        df_keywords["bag_of_words"].apply(lambda x: palabra_clave in x),
+        df_keywords.filter(regex="\d\.\d").columns,
+    ]
+    df_filtered = convert_int_to_competencias(df_filtered)
+    return generate_filtered_table(df_filtered)
 
 
 if __name__ == "__main__":
-    app.run_server(debug=False)
+    app.run_server(debug=True)
