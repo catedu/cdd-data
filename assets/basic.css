@@ -27,4 +27,8 @@ th, td {
     display : block !important;
     color: #999999;
 }
-    
+
+    /* Select div with two classes assigned */
+/*    .dropdown-cell-value-shadow.cell-value-shadow {
+        color: #999999 !important;
+    } *

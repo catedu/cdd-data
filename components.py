@@ -5,6 +5,17 @@ from slugify import slugify
 from data import input_df, NIVEL_DE_PROGRESION
 
 
+def generate_talbes_cols(table):
+    return dbc.Col(
+            [
+                table
+            ],
+            lg=2,
+            md=2,
+            xs=12,
+        )
+
+
 def generate_table(df):
     tabla = dash_table.DataTable(
         df[["Curso", "Categorías", "Horas"]]
@@ -52,7 +63,7 @@ def generate_filtered_table(df):
     ## Tutor: todas las competencias que vengan rellenadas a C1
     area_colors = {
         1: "#F0EBD8",
-        2: "green",
+        2: "#F0EBD8",
         3: "#F0EBD8",
         4: "#F0EBD8",
         5: "#F0EBD8",
@@ -77,10 +88,9 @@ def generate_filtered_table(df):
         )
         return tabla
 
-    tablas = [generate_area_table(df, i) for i in range(1, 7)]
+    cols = [generate_talbes_cols(generate_area_table(df, i)) for i in range(1, 7)]
 
-    return tablas
-
+    return dbc.Row(cols, justify="center", style={"margin": "10px"})
 
 navbar = dbc.NavbarSimple(
     [
@@ -110,16 +120,14 @@ actividad_con_alumnado = dbc.Switch(
     id="bool-con-alumnado",
     label="¿Adquiere esta competencia el alumnado?",
     value=False,
+    style={"margin": "10px", "margin-right": "30px"},
 )
 
 # Por debajo de 10 horas la puntuación máxima es un A2 ¿Máximo de horas?
-horas = dbc.Input(
-    id="n-horas",
-    type="number",
-    placeholder="Introduce el número horas",
-    min=0,
-    max=100,
-    step=10,
+horas = dbc.Switch(
+    id="menos-de-10-horas",
+    label="¿El curso tiene menos de 10 horas?",
+    value=False,
     style={"margin": "10px", "margin-right": "30px"},
 )
 
@@ -131,42 +139,34 @@ modalidad = dcc.Dropdown(
     ],
     id="modalidad",
     placeholder="Selecciona la modalidad",
-    style={"margin": "10px", "margin-right": "30px"},
+    style={"margin": "10px", "margin-top": "30px"},
 )
 
-input_group = dbc.Input(
+palabras_clave = dbc.Textarea(
     id="palabras-clave",
-    type="text",
+    size="sm",
     placeholder="Introduce palabras clave separadas por comas",
     style={"margin": "10px", "margin-right": "30px"},
 )
-
-print(input_df)
 
 search_inputs_rows = [
     dbc.Row(
         [
             dbc.Col(
                 [
-                    horas,
-                ],
-                lg=3,
-                md=4,
-                xs=12,
-            ),
-            dbc.Col(
-                [
+                    palabras_clave,
                     modalidad,
                 ],
-                lg=3,
-                md=4,
+                lg=8,
+                md=8,
                 xs=12,
             ),
             dbc.Col(
                 [
                     actividad_con_alumnado,
+                    horas,
                 ],
-                lg=3,
+                lg=4,
                 md=4,
                 xs=12,
             ),
@@ -178,21 +178,13 @@ search_inputs_rows = [
         [
             dbc.Col(
                 [
-                    input_group,
-                ],
-                lg=4,
-                md=4,
-                xs=12,
-            ),
-            dbc.Col(
-                [
                     dash_table.DataTable(
                         id="adding-rows-table",
                         columns=[
                             {"name": i, "id": slugify(i), "presentation": "dropdown"}
                             for i in input_df.columns
                         ],
-                        data=input_df[:5].to_dict("records"),
+                        data=input_df[:2].to_dict("records"),
                         editable=True,
                         row_deletable=True,
                         dropdown={
@@ -200,7 +192,7 @@ search_inputs_rows = [
                                 "options": [
                                     {"label": i, "value": i}
                                     for i in input_df["Competencias"].unique()
-                                ]
+                                ],
                             },
                             "nivel-de-progresion": {
                                 "options": [
@@ -209,6 +201,14 @@ search_inputs_rows = [
                                 ]
                             },
                         },
+                        # style_table={'overflowX': 'auto'},
+                        style_cell={
+                            'height': 'auto',
+                            # all three widths are needed
+                            'minWidth': '180px', 'width': '180px', 'maxWidth': '180px',
+                            'whiteSpace': 'normal',
+                            'textAlign': 'left',
+                        }
                     ),
                     dbc.Button("Add Row", id="editing-rows-button", n_clicks=0),
                 ],
