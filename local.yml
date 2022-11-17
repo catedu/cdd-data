@@ -8,5 +8,8 @@ services:
     command: "gunicorn --workers=5 --threads=1 -b 0.0.0.0:8050 app:server"
     volumes:
       - .:/home/app
+    environment:
+      - APPUSER=${APPUSER}
+      - PASSWORD=${PASSWORD}
     ports:
       - "8050:8050"

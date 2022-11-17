@@ -5,7 +5,8 @@ import dash_bootstrap_components as dbc
 import dash_auth
 import pandas as pd
 
-VALID_USERNAME_PASSWORD_PAIRS = {os.environ.get("USER"): os.environ.get("PASSWORD")}
+VALID_USERNAME_PASSWORD_PAIRS = {os.environ.get("APPUSER"): os.environ.get("PASSWORD")}
+print(VALID_USERNAME_PASSWORD_PAIRS)
 
 from components import (
     search_inputs_rows,
@@ -105,4 +106,4 @@ def add_row(n_clicks, rows, columns):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(debug=False)
