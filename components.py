@@ -17,24 +17,10 @@ def generate_bootstrap_table(df):
 
 
 navbar = dbc.NavbarSimple(
-    [
-        html.A(
-            # Use row and col to control vertical alignment of logo / brand
-            dbc.Row(
-                [
-                    dbc.Col(
-                        html.Img(src="assets/images/aularagon.png", height="50px"),
-                        width="12",
-                    ),
-                ],
-                align="left",
-            ),
-            href="https://moodle.catedu.es",
-            # style={"textDecoration": "none"},
-        ),
-    ],
+    brand="Mapeado de Formación CDD",
+    brand_href="#",
     color="primary",  # "#5EC877",
-    dark=False,
+    dark=True,
 )
 
 # TODO: Si se ha trabajado la actividad con alumnado y
