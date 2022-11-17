@@ -8,11 +8,14 @@ attrs==22.1.0; python_full_version >= "3.7.0" and python_version >= "3.7"
 backcall==0.2.0; python_version >= "3.8"
 beautifulsoup4==4.11.1; python_full_version >= "3.6.0" and python_version >= "3.7"
 bleach==5.0.1; python_version >= "3.7"
+brotli==1.0.9
 certifi==2022.9.24; python_version >= "3.7" and python_version < "4"
 cffi==1.15.1; implementation_name == "pypy" and python_version >= "3.8"
 charset-normalizer==2.1.1; python_version >= "3.7" and python_version < "4" and python_full_version >= "3.6.0"
+chart-studio==1.1.0
 click==8.1.3; python_version >= "3.7"
 colorama==0.4.6; python_version >= "3.8" and python_full_version < "3.0.0" and sys_platform == "win32" and platform_system == "Windows" or sys_platform == "win32" and python_version >= "3.8" and python_full_version >= "3.7.0" and platform_system == "Windows"
+dash-auth==1.4.1
 dash-bootstrap-components==1.2.1; python_version >= "3.6" and python_version < "4"
 dash-core-components==2.0.0; python_version >= "3.6" and python_version < "4"
 dash-daq==0.5.0
@@ -25,6 +28,8 @@ defusedxml==0.7.1; python_version >= "3.7" and python_full_version < "3.0.0" or 
 entrypoints==0.4; python_version >= "3.8"
 executing==1.2.0; python_version >= "3.8"
 fastjsonschema==2.16.2; python_full_version >= "3.7.0" and python_version >= "3.7"
+flask-compress==1.13
+flask-seasurf==1.1.1
 flask==2.2.2; python_version >= "3.7" and python_version < "4"
 gunicorn==20.1.0; python_version >= "3.5"
 idna==3.4; python_version >= "3.7" and python_version < "4" and python_full_version >= "3.6.2"
@@ -97,6 +102,7 @@ text-unidecode==1.3; python_version >= "2.7" and python_full_version < "3.0.0" o
 tinycss2==1.2.1; python_version >= "3.7"
 tornado==6.2; python_version >= "3.8"
 traitlets==5.5.0; python_full_version >= "3.7.0" and python_version >= "3.8"
+ua-parser==0.16.1
 urllib3==1.26.12; python_version >= "3.7" and python_full_version < "3.0.0" and python_version < "4" or python_full_version >= "3.6.0" and python_version < "4" and python_version >= "3.7"
 wcwidth==0.2.5; python_full_version >= "3.6.2" and python_version >= "3.8"
 webencodings==0.5.1; python_version >= "3.7"

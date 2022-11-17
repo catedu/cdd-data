@@ -5,92 +5,16 @@ from slugify import slugify
 from data import input_df, NIVEL_DE_PROGRESION
 
 
-def generate_talbes_cols(table):
-    return dbc.Col(
-            [
-                table
-            ],
-            lg=2,
-            md=2,
-            xs=12,
-        )
-
-
-def generate_table(df):
-    tabla = dash_table.DataTable(
-        df[["Curso", "Categorías", "Horas"]]
-        .join(df.filter(regex="\d\.\d").fillna(""))
-        .to_dict("records"),
-        [
-            {"name": i, "id": i, "presentation": "markdown"}
-            for i in df[["Curso", "Categorías", "Horas"]]
-            .join(df.filter(regex="\d\.\d"))
-            .columns
-        ],
-        fixed_columns={"headers": True, "data": 1},
-        # page_size=20,
-        page_action="native",
-        page_current=0,
-        page_size=10,
-        style_table={"minWidth": "100%"},
-        style_cell_conditional=[
-            {"if": {"column_id": c}, "textAlign": "left"}
-            for c in ["Curso", "Categorías"]
-        ],
-        style_data_conditional=[
-            {
-                "if": {"row_index": "odd"},
-                "backgroundColor": "#F0EBD8",
-            }
-        ],
-        style_header={
-            "backgroundColor": "#748CAB",
-            "color": "white",
-            # 'fontWeight': 'bold',
-            # 'border': '1px solid black'
-        },
-        sort_action="native",
-        fill_width=True,
-        filter_action="native",
-        filter_options={"case": "insensitive"},
+def generate_bootstrap_table(df):
+    return dbc.Table.from_dataframe(
+        df,
+        striped=True,
+        bordered=True,
+        hover=True,
+        responsive=True,
+        style={"margin": "20px", "width": "96%"},
     )
-    return tabla
 
-
-def generate_filtered_table(df):
-    # TODO: Hacer tablas de participante, coordinador, tutor.
-    ## Coordinador todo igual que participante menos Área 1 = todo B1
-    ## Tutor: todas las competencias que vengan rellenadas a C1
-    area_colors = {
-        1: "#F0EBD8",
-        2: "#F0EBD8",
-        3: "#F0EBD8",
-        4: "#F0EBD8",
-        5: "#F0EBD8",
-        6: "#F0EBD8",
-    }
-
-    def generate_area_table(df, numero_area):
-        df_copy = df.filter(regex=f"{numero_area}\.\d")
-        tabla = html.Table(
-            # Header
-            [html.Tr([html.Th(col) for col in df_copy.columns])] +
-            # Body
-            [
-                html.Tr([html.Td(df_copy.iloc[i][col]) for col in df_copy.columns])
-                for i in range(len(df_copy))
-            ],
-            style={
-                "width": "100%",
-                "border": "1px solid black",
-                "background": area_colors[numero_area],
-            },
-        )
-        return tabla
-
-    cols = [generate_talbes_cols(generate_area_table(df, i)) for i in range(1, 7)]
-
-    return dbc.Row(cols, justify="center", style={"margin": "10px"})
 
 navbar = dbc.NavbarSimple(
     [
@@ -109,7 +33,7 @@ navbar = dbc.NavbarSimple(
             # style={"textDecoration": "none"},
         ),
     ],
-    color="#5EC877",
+    color="primary",  # "#5EC877",
     dark=False,
 )
 
@@ -203,12 +127,14 @@ search_inputs_rows = [
                         },
                         # style_table={'overflowX': 'auto'},
                         style_cell={
-                            'height': 'auto',
+                            "height": "auto",
                             # all three widths are needed
-                            'minWidth': '180px', 'width': '180px', 'maxWidth': '180px',
-                            'whiteSpace': 'normal',
-                            'textAlign': 'left',
-                        }
+                            "minWidth": "180px",
+                            "width": "180px",
+                            "maxWidth": "180px",
+                            "whiteSpace": "normal",
+                            "textAlign": "left",
+                        },
                     ),
                     dbc.Button("Add Row", id="editing-rows-button", n_clicks=0),
                 ],

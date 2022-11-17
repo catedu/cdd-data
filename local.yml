@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  cursos_catedu:
+    build: .
+    restart: always
+    container_name: cursos-catedu
+    command: "gunicorn --workers=5 --threads=1 -b 0.0.0.0:8050 app:server"
+    volumes:
+      - .:/home/app
+    ports:
+      - "8050:8050"

@@ -156,6 +156,14 @@ css = ["tinycss2 (>=1.1.0,<1.2)"]
 dev = ["build (==0.8.0)", "flake8 (==4.0.1)", "hashin (==0.17.0)", "pip-tools (==6.6.2)", "pytest (==7.1.2)", "Sphinx (==4.3.2)", "tox (==3.25.0)", "twine (==4.0.1)", "wheel (==0.37.1)", "black (==22.3.0)", "mypy (==0.961)"]
 
 [[package]]
+name = "brotli"
+version = "1.0.9"
+description = "Python bindings for the Brotli compression library"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "certifi"
 version = "2022.9.24"
 description = "Python package for providing Mozilla's CA Bundle."
@@ -184,6 +192,20 @@ python-versions = ">=3.6.0"
 
 [package.extras]
 unicode_backport = ["unicodedata2"]
+
+[[package]]
+name = "chart-studio"
+version = "1.1.0"
+description = "Utilities for interfacing with plotly's Chart Studio"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+plotly = "*"
+requests = "*"
+retrying = ">=1.3.3"
+six = "*"
 
 [[package]]
 name = "click"
@@ -226,6 +248,25 @@ compress = ["flask-compress"]
 dev = ["coloredlogs (>=15.0.1)", "fire (>=0.4.0)", "PyYAML (>=5.4.1)"]
 diskcache = ["diskcache (>=5.2.1)", "multiprocess (>=0.70.12)", "psutil (>=5.8.0)"]
 testing = ["beautifulsoup4 (>=4.8.2)", "lxml (>=4.6.2)", "percy (>=2.0.2)", "pytest (>=6.0.2)", "requests[security] (>=2.21.0)", "selenium (>=3.141.0,<=4.2.0)", "waitress (>=1.4.4)", "multiprocess (>=0.70.12)", "psutil (>=5.8.0)", "cryptography (<3.4)"]
+
+[[package]]
+name = "dash-auth"
+version = "1.4.1"
+description = "Dash Authorization Package."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+chart_studio = ">=1.0.0"
+dash = ">=1.1.1"
+Flask = ">=1.0.2"
+flask-compress = "*"
+flask-seasurf = "*"
+itsdangerous = ">=1.1.0"
+requests = "*"
+retrying = "*"
+ua_parser = "*"
 
 [[package]]
 name = "dash-bootstrap-components"
@@ -348,6 +389,29 @@ Werkzeug = ">=2.2.2"
 [package.extras]
 async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
+
+[[package]]
+name = "flask-compress"
+version = "1.13"
+description = "Compress responses in your Flask app with gzip, deflate or brotli."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+brotli = "*"
+flask = "*"
+
+[[package]]
+name = "flask-seasurf"
+version = "1.1.1"
+description = "An updated CSRF extension for Flask."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+Flask = "*"
 
 [[package]]
 name = "gunicorn"
@@ -1362,6 +1426,14 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "ua-parser"
+version = "0.16.1"
+description = "Python port of Browserscope's user agent parser"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "urllib3"
 version = "1.26.12"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -1440,7 +1512,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "flake8 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "6c4f5d1da48f6292748275ffdd7aba04a2d7014aedbbec78d23240051769aea2"
+content-hash = "6282c182ac0a3381250bb931cca8c71794b9b1c80c1318046d3c2016edb8a9db"
 
 [metadata.files]
 ansi2html = []
@@ -1457,12 +1529,15 @@ backcall = [
 beautifulsoup4 = []
 black = []
 bleach = []
+brotli = []
 certifi = []
 cffi = []
 charset-normalizer = []
+chart-studio = []
 click = []
 colorama = []
 dash = []
+dash-auth = []
 dash-bootstrap-components = []
 dash-core-components = []
 dash-daq = []
@@ -1478,6 +1553,8 @@ entrypoints = []
 executing = []
 fastjsonschema = []
 flask = []
+flask-compress = []
+flask-seasurf = []
 gunicorn = []
 idna = []
 importlib-metadata = []
@@ -1572,6 +1649,7 @@ tomli = []
 tornado = []
 traitlets = []
 typing-extensions = []
+ua-parser = []
 urllib3 = []
 wcwidth = [
     {file = "wcwidth-0.2.5-py2.py3-none-any.whl", hash = "sha256:beb4802a9cebb9144e99086eff703a642a13d6a0052920003a230f3294bbe784"},

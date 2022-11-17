@@ -11,8 +11,8 @@ services:
     expose:
       - "8050"
     environment:
-      VIRTUAL_HOST: "infocursos.catedu.es"
-      LETSENCRYPT_HOST: "infocursos.catedu.es"
+      VIRTUAL_HOST: "mapeocdd.catedu.es"
+      LETSENCRYPT_HOST: "mapeocdd.catedu.es"
       LETSENCRYPT_EMAIL: "jesuslopezdeleyva@gmail.com"
     networks:
       - nginx-proxy_frontend
