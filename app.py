@@ -89,7 +89,7 @@ def show_table(palabras_clave, horas, modalidad, actividad_con_alumnado, rows):
     if horas:
         df_filtered = to_a2_if_below_10(df_filtered)
     df_filtered = convert_int_to_competencias(df_filtered)
-    return generate_bootstrap_table(df_filtered), str(rows_filtered)
+    return generate_bootstrap_table(df_filtered)
 
 
 @app.callback(
