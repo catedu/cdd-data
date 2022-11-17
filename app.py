@@ -6,7 +6,6 @@ import dash_auth
 import pandas as pd
 
 VALID_USERNAME_PASSWORD_PAIRS = {os.environ.get("APPUSER"): os.environ.get("PASSWORD")}
-print(VALID_USERNAME_PASSWORD_PAIRS)
 
 from components import (
     search_inputs_rows,
