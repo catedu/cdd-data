@@ -33,7 +33,7 @@ def convert_int_to_competencias(df):
 
 def to_a2_if_below_10(df):
     """Check all the cells with values and values greater than 2 and set them to 1"""
-    df.iloc[:, -23:] = df.filter(regex="\d\.\d").applymap(lambda x: 1 if x > 2 else x)
+    df.iloc[:, -23:] = df.filter(regex="\d\.\d").applymap(lambda x: min(x, 2))
     return df
 
 
@@ -59,6 +59,8 @@ def segun_modalidad(df, modalidad):
         df[df.filter(regex="2\.\d").columns] = df.filter(regex="2\.\d").applymap(
             lambda x: 3 if x > 0 else x
         )
+    elif modalidad == 1:
+        return df
     else:
         df["1.2"] = df["1.2"].apply(lambda x: max(x, 2))
         df["1.4"] = df["1.4"].apply(lambda x: max(x, 3))
@@ -84,9 +86,7 @@ def modifica_segun_competencias(df_filtered, df_competencias, rows):
             df_competencias["COMPETENCIAS AGRUPADAS"] == row[0],
             df_competencias.filter(regex="\d\.\d").columns,
         ]
-        df.to_csv("test.csv")
         df = df.applymap(lambda x: x if x == 0 else modifiers[row[1]])
-        df.to_csv("test2.csv")
         dfs.append(df)
 
     dfs.append(df_filtered)

@@ -5,6 +5,7 @@ import dash_bootstrap_components as dbc
 import dash_auth
 import pandas as pd
 
+
 VALID_USERNAME_PASSWORD_PAIRS = {os.environ.get("APPUSER"): os.environ.get("PASSWORD")}
 
 from components import (
@@ -69,20 +70,21 @@ app.layout = html.Div(
     ),
 )
 def show_table(palabras_clave, horas, modalidad, actividad_con_alumnado, rows):
+    rows_filtered = [
+        (row.get("competencias"), row.get("nivel-de-progresion")) for row in rows
+    ]
     if palabras_clave is None or len(palabras_clave) == 0:
-        return html.Div()
-    df_filtered = filtrar_por_palabras_clave(palabras_clave, df_keywords)
+        df_filtered = filtrar_por_palabras_clave("nada,nada", df_keywords)
+    else:
+        df_filtered = filtrar_por_palabras_clave(palabras_clave, df_keywords)
+    df_filtered = modifica_segun_competencias(
+            df_filtered, df_competencias, rows_filtered
+        )
     if modalidad:
         # TODO: filtro por modalidad quitando datos
         df_filtered = segun_modalidad(df_filtered, modalidad)
 
     # obtengo los datos de la tabla de Competencias y Nivel de progresión
-    rows_filtered = [
-        (row.get("competencias"), row.get("nivel-de-progresion")) for row in rows
-    ]
-    df_filtered = modifica_segun_competencias(
-        df_filtered, df_competencias, rows_filtered
-    )
     df_filtered = add_cdd_minimum(df_filtered)
     if not actividad_con_alumnado:
         df_filtered = con_alumnado(df_filtered)
@@ -105,4 +107,4 @@ def add_row(n_clicks, rows, columns):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=False)
+    app.run_server(debug=True)

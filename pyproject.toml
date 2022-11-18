@@ -9,16 +9,16 @@ license = "MIT"
 python = "^3.8"
 dash = "^2.7.0"
 pandas = "^1.5.1"
-jupyter = "^1.0.0"
-jupyter-dash = "^0.4.2"
-Pillow = "^9.3.0"
 python-slugify = "^6.1.2"
 dash-bootstrap-components = "^1.2.1"
 dash-daq = "^0.5.0"
 gunicorn = "^20.1.0"
 dash-auth = "^1.4.1"
+python-dotenv = "^0.21.0"
 
 [tool.poetry.dev-dependencies]
+jupyter = "^1.0.0"
+jupyter-dash = "^0.4.2"
 black = "^22.10.0"
 
 [build-system]
