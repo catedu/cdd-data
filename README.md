@@ -1,5 +1,17 @@
 # Web para mapeo de actividades de competencia digital
 
+## Correr este proyecto en local
+
+```bash
+git pull https://github.com/catedu/cdd-data.git # o descargar el zip
+cd cdd-data
+echo "APPUSER=testuser\nPASSWORD=testpass\nDEBUG=True" > .env # crear un archivo .env vacío
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python app.py
+```
+
 ## Condiciones para mapeo:
 
 - Los valores del mapeo no son sumativos, sino que se elige el valor más alto para cada competencia de todas las condiciones dadas. 
