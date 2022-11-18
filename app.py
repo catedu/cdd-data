@@ -4,7 +4,11 @@ from dash import Dash, dcc, html, Input, Output, State
 import dash_bootstrap_components as dbc
 import dash_auth
 import pandas as pd
+from dotenv import load_dotenv, find_dotenv
 
+load_dotenv(find_dotenv())
+
+print(os.environ.get('DEBUG'))
 
 VALID_USERNAME_PASSWORD_PAIRS = {os.environ.get("APPUSER"): os.environ.get("PASSWORD")}
 
@@ -107,4 +111,4 @@ def add_row(n_clicks, rows, columns):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=False)
+    app.run_server(debug=bool(os.environ.get('DEBUG')))
