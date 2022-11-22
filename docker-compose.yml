@@ -16,6 +16,7 @@ services:
       LETSENCRYPT_EMAIL: "jesuslopezdeleyva@gmail.com"
       APPUSER: ${APPUSER}
       PASSWORD: ${PASSWORD}
+      TZ: "Europe/Madrid"
     networks:
       - nginx-proxy_frontend
 
