@@ -1,4 +1,5 @@
 import os
+import contextlib
 
 from dash import Dash, dcc, html, Input, Output, State
 import dash_bootstrap_components as dbc
@@ -18,7 +19,9 @@ from components import (
     generate_bootstrap_table,
 )
 from data import (
+    get_df_keywords,
     df_keywords,
+    last_update,
     df_competencias,
 )
 from utils import (
@@ -34,7 +37,6 @@ from utils import (
 app = Dash(__name__, external_stylesheets=[dbc.themes.MATERIA])
 app.title = "Mapeo de actividades"
 auth = dash_auth.BasicAuth(app, VALID_USERNAME_PASSWORD_PAIRS)
-
 
 server = app.server
 
@@ -74,9 +76,12 @@ app.layout = html.Div(
     ),
 )
 def show_table(palabras_clave, horas, modalidad, actividad_con_alumnado, rows):
-    rows_filtered = [
-        (row.get("competencias"), row.get("nivel-de-progresion")) for row in rows
-    ]
+    try:
+        rows_filtered = [
+            (row.get("competencias"), row.get("nivel-de-progresion")) for row in rows
+        ]
+    except:
+        pass
     if palabras_clave is None or len(palabras_clave) == 0:
         df_filtered = filtrar_por_palabras_clave("nada,nada", df_keywords)
     else:

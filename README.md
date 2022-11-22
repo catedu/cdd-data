@@ -3,13 +3,13 @@
 ## Correr este proyecto en local
 
 ```bash
-git pull https://github.com/catedu/cdd-data.git # o descargar el zip
-cd cdd-data
-echo "APPUSER=testuser\nPASSWORD=testpass\nDEBUG=True" > .env # crear un archivo .env vacío
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-python app.py
+git pull https://github.com/catedu/cdd-data.git # o descargar el zip y descomprimir
+cd cdd-data # entrar en la carpeta
+echo "APPUSER=testuser\nPASSWORD=testpass\nDEBUG=True" > .env # crear un archivo .env con las variables de entorno
+python3 -m venv venv # crear un entorno virtual
+source venv/bin/activate # activar el entorno virtual
+pip install -r requirements.txt # instalar dependencias
+python app.py # correr el proyecto
 ```
 
 ## Condiciones para mapeo:

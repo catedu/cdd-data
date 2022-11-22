@@ -1,5 +1,9 @@
 import pandas as pd
 from collections import OrderedDict
+from datetime import datetime
+from babel.dates import format_datetime
+
+DATA_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSdo4kxvPecEjGdLdPRSpthqErMLfSME92ZydvcFbSSzexgcN3W_oI_eQ6EL6BqQ8BTnQNoqEShDIW1/pub?gid=1290913514&single=true&output=csv"
 
 NIVEL_DE_PROGRESION = [
     "Conocimiento teórico",
@@ -34,7 +38,12 @@ def get_df_competencias(df):
 
 
 def get_df_keywords():
-    df_keywords = pd.read_csv("Dicc.csv", sep=";")
+    last_update = format_datetime(
+        datetime.now(), 
+        "'Última actualización el' EEEE',' d 'de' MMMM 'de' YYYY 'a las' H:mm:ss", 
+        locale="es"
+        )
+    df_keywords = pd.read_csv(DATA_URL, sep=",")
     df_keywords["bag_of_words"] = (
         df_keywords[["PALABRA_CLAVE", "SINONIMOS"]]
         .fillna("")
@@ -46,7 +55,7 @@ def get_df_keywords():
     cols = df_keywords.columns.tolist()
     cols = cols[-1:] + cols[:-1]
     df_keywords = df_keywords.reindex(cols, axis=1)
-    return df_keywords
+    return df_keywords, last_update
 
 
 def get_input_df(df_competencias, lista_niveles):
@@ -65,6 +74,6 @@ def get_input_df(df_competencias, lista_niveles):
     )
 
 
-df_keywords = get_df_keywords()
+df_keywords, last_update = get_df_keywords()
 df_competencias = get_df_competencias(df_keywords)
 input_df = get_input_df(df_competencias, NIVEL_DE_PROGRESION)

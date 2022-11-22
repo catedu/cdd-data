@@ -5,7 +5,7 @@ services:
     build: .
     restart: always
     container_name: cursos-catedu
-    command: "gunicorn --workers=5 --threads=1 -b 0.0.0.0:8050 app:server"
+    command: "gunicorn --workers=1 --threads=1 -b 0.0.0.0:8050 app:server"
     volumes:
       - .:/home/app
     expose:

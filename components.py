@@ -2,6 +2,7 @@ import dash_bootstrap_components as dbc
 from dash import dash_table, html, dcc
 from slugify import slugify
 
+
 from data import input_df, NIVEL_DE_PROGRESION
 
 
@@ -67,9 +68,19 @@ search_inputs_rows = [
                     palabras_clave,
                     modalidad,
                 ],
-                lg=8,
-                md=8,
+                lg=4,
+                md=4,
                 xs=12,
+            ),
+            dbc.Col(
+                [
+                    dbc.Button('Actualizar datos del csv', id='refresh-data'),
+                    html.H3("Competencias"),
+                ],
+                lg=4,
+                md=4,
+                xs=12,
+                align="center",
             ),
             dbc.Col(
                 [
