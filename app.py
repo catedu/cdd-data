@@ -9,7 +9,7 @@ from dotenv import load_dotenv, find_dotenv
 
 load_dotenv(find_dotenv())
 
-print(os.environ.get('DEBUG'))
+print(os.environ.get("DEBUG"))
 
 VALID_USERNAME_PASSWORD_PAIRS = {os.environ.get("APPUSER"): os.environ.get("PASSWORD")}
 
@@ -87,8 +87,8 @@ def show_table(palabras_clave, horas, modalidad, actividad_con_alumnado, rows):
     else:
         df_filtered = filtrar_por_palabras_clave(palabras_clave, df_keywords)
     df_filtered = modifica_segun_competencias(
-            df_filtered, df_competencias, rows_filtered
-        )
+        df_filtered, df_competencias, rows_filtered
+    )
     if modalidad:
         # TODO: filtro por modalidad quitando datos
         df_filtered = segun_modalidad(df_filtered, modalidad)
@@ -115,5 +115,14 @@ def add_row(n_clicks, rows, columns):
     return rows
 
 
+@app.callback(
+    Output("output-last-update", "children"), [Input("refresh-data", "n_clicks")]
+)
+def refresh_data(value):
+    global df_keywords, last_update
+    df_keywords, last_update = get_df_keywords()
+    return last_update
+
+
 if __name__ == "__main__":
-    app.run_server(debug=bool(os.environ.get('DEBUG')))
+    app.run_server(debug=bool(os.environ.get("DEBUG")))

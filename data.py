@@ -23,14 +23,8 @@ int_competencias = {
 }
 
 
-def get_df_competencias(df):
+def get_df_competencias():
     competencias = pd.read_csv("competencias.csv", sep=",")
-    competencias = competencias.rename(
-        columns={
-            x[0]: x[1]
-            for x in zip(competencias.columns[-23:], df.filter(regex="\d\.\d").columns)
-        }
-    )
     competencias.iloc[:, -23:] = (
         competencias.filter(regex="\d\.\d").fillna(0).astype(int)
     )
@@ -39,10 +33,10 @@ def get_df_competencias(df):
 
 def get_df_keywords():
     last_update = format_datetime(
-        datetime.now(), 
-        "'Última actualización el' EEEE',' d 'de' MMMM 'de' YYYY 'a las' H:mm:ss", 
-        locale="es"
-        )
+        datetime.now(),
+        "'Última actualización el' EEEE',' d 'de' MMMM 'de' YYYY 'a las' H:mm:ss",
+        locale="es",
+    )
     df_keywords = pd.read_csv(DATA_URL, sep=",")
     df_keywords["bag_of_words"] = (
         df_keywords[["PALABRA_CLAVE", "SINONIMOS"]]
@@ -75,5 +69,5 @@ def get_input_df(df_competencias, lista_niveles):
 
 
 df_keywords, last_update = get_df_keywords()
-df_competencias = get_df_competencias(df_keywords)
+df_competencias = get_df_competencias()
 input_df = get_input_df(df_competencias, NIVEL_DE_PROGRESION)

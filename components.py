@@ -68,19 +68,9 @@ search_inputs_rows = [
                     palabras_clave,
                     modalidad,
                 ],
-                lg=4,
-                md=4,
+                lg=8,
+                md=8,
                 xs=12,
-            ),
-            dbc.Col(
-                [
-                    dbc.Button('Actualizar datos del csv', id='refresh-data'),
-                    html.H3("Competencias"),
-                ],
-                lg=4,
-                md=4,
-                xs=12,
-                align="center",
             ),
             dbc.Col(
                 [
@@ -134,6 +124,12 @@ search_inputs_rows = [
                         },
                     ),
                     dbc.Button("Add Row", id="editing-rows-button", n_clicks=0),
+                    dbc.Button(
+                        "Actualizar datos del csv",
+                        id="refresh-data",
+                        style={"margin-left": "30px", "margin-right": "10px"},
+                    ),
+                    html.Div(id="output-last-update"),
                 ],
                 lg=8,
                 md=8,
