@@ -1,5 +1,4 @@
 from typing import List
-from pprint import pprint
 
 import pandas as pd
 from data import int_competencias, NIVEL_DE_PROGRESION
@@ -40,6 +39,7 @@ def to_a2_if_below_10(df):
 def filtrar_por_palabras_clave(palabras_clave: str, df: pd.DataFrame):
     """Filtrar por palabras clave"""
     dfs = []
+    palabras_no_encontradas = []
     palabras_clave = list(palabras_clave.split(","))
     palabras_clave = [x.strip() for x in palabras_clave if len(x.strip()) > 0]
     for palabra_clave in palabras_clave:
@@ -49,8 +49,14 @@ def filtrar_por_palabras_clave(palabras_clave: str, df: pd.DataFrame):
             df.filter(regex="\d\.\d").columns,
         ]
         dfs.append(df_filtered)
-
-    return convert_to_one_row_df_with_max_values(dfs)
+        if not any(df["bag_of_words"].apply(lambda x: palabra_clave in x)):
+            palabras_no_encontradas.append(palabra_clave)
+            
+    if palabras_no_encontradas and palabras_clave != ['nada', 'nada']:
+        palabras_no_encontradas = f'{", ".join(palabras_no_encontradas)} no se encuentra en el diccionario'
+    else:
+        palabras_no_encontradas = ""
+    return convert_to_one_row_df_with_max_values(dfs), palabras_no_encontradas
 
 
 def segun_modalidad(df, modalidad):

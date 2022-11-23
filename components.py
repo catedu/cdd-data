@@ -60,12 +60,15 @@ palabras_clave = dbc.Textarea(
     style={"margin": "10px", "margin-right": "30px"},
 )
 
+palabras_no_encontradas = html.Div(id="no-encontrado", style={"margin": "10px"})
+
 search_inputs_rows = [
     dbc.Row(
         [
             dbc.Col(
                 [
                     palabras_clave,
+                    palabras_no_encontradas,
                     modalidad,
                 ],
                 lg=8,

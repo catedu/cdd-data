@@ -1,5 +1,4 @@
 import os
-import contextlib
 
 from dash import Dash, dcc, html, Input, Output, State
 import dash_bootstrap_components as dbc
@@ -8,8 +7,6 @@ import pandas as pd
 from dotenv import load_dotenv, find_dotenv
 
 load_dotenv(find_dotenv())
-
-print(os.environ.get("DEBUG"))
 
 VALID_USERNAME_PASSWORD_PAIRS = {os.environ.get("APPUSER"): os.environ.get("PASSWORD")}
 
@@ -57,6 +54,7 @@ app.layout = html.Div(
 
 @app.callback(
     Output("output", "children"),
+    Output("no-encontrado", "children"),
     Input(
         "palabras-clave",
         "value",
@@ -76,6 +74,7 @@ app.layout = html.Div(
     ),
 )
 def show_table(palabras_clave, horas, modalidad, actividad_con_alumnado, rows):
+    text_words_not_found = ""
     try:
         rows_filtered = [
             (row.get("competencias"), row.get("nivel-de-progresion")) for row in rows
@@ -83,9 +82,9 @@ def show_table(palabras_clave, horas, modalidad, actividad_con_alumnado, rows):
     except:
         pass
     if palabras_clave is None or len(palabras_clave) == 0:
-        df_filtered = filtrar_por_palabras_clave("nada,nada", df_keywords)
+        df_filtered, palabras_no_encontradas = filtrar_por_palabras_clave("nada,nada", df_keywords)
     else:
-        df_filtered = filtrar_por_palabras_clave(palabras_clave, df_keywords)
+        df_filtered, palabras_no_encontradas = filtrar_por_palabras_clave(palabras_clave, df_keywords)
     df_filtered = modifica_segun_competencias(
         df_filtered, df_competencias, rows_filtered
     )
@@ -100,7 +99,7 @@ def show_table(palabras_clave, horas, modalidad, actividad_con_alumnado, rows):
     if horas:
         df_filtered = to_a2_if_below_10(df_filtered)
     df_filtered = convert_int_to_competencias(df_filtered)
-    return generate_bootstrap_table(df_filtered)
+    return generate_bootstrap_table(df_filtered), palabras_no_encontradas
 
 
 @app.callback(
