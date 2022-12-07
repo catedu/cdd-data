@@ -37,7 +37,7 @@ actividad_con_alumnado = dbc.Switch(
 # Por debajo de 10 horas la puntuación máxima es un A2 ¿Máximo de horas?
 horas = dbc.Switch(
     id="menos-de-10-horas",
-    label="¿El curso tiene menos de 10 horas?",
+    label="¿La actividad tiene menos de 10 horas?",
     value=False,
     style={"margin": "10px", "margin-right": "30px"},
 )
@@ -126,7 +126,7 @@ search_inputs_rows = [
                             "textAlign": "left",
                         },
                     ),
-                    dbc.Button("Add Row", id="editing-rows-button", n_clicks=0),
+                    dbc.Button("Añadir fila", id="editing-rows-button", n_clicks=0),
                     dbc.Button(
                         "Actualizar datos del csv",
                         id="refresh-data",

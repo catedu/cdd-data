@@ -27,7 +27,7 @@ python app.py # correr el proyecto
 - No se ve afectada por el desplegable _Nivel_, solo aporta un valor no aumentativo.
 - Hacer que coincida con un diccionario de sinónimos.
 
-## Input ¿El curso tiene menos de 10 horas?
+## Input ¿La actividad tiene menos de 10 horas?
 
 - Menor que 10 horas: la competencia máxima es A2 en todos los campos donde haya.
 
