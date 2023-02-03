@@ -4,7 +4,8 @@ from slugify import slugify
 
 
 from data import input_df, NIVEL_DE_PROGRESION
-
+PLOTLY_LOGO = "https://educa.aragon.es/o/educaragon-theme/images/header/banda.png"
+PLOTLY_Trans = "https://www.cddaragon.es/wp-content/uploads/2022/06/CARAMELO-BISEL-logocabecera.png"
 
 def generate_bootstrap_table(df):
     return dbc.Table.from_dataframe(
@@ -13,33 +14,50 @@ def generate_bootstrap_table(df):
         bordered=True,
         hover=True,
         responsive=True,
-        style={"margin": "20px", "width": "96%"},
+        style={"margin": "20px", "width": "96%", "background-color":"white"},
     )
 
 
-navbar = dbc.NavbarSimple(
-    brand="Mapeado de Formación CDD",
-    brand_href="#",
-    color="primary",  # "#5EC877",
-    dark=True,
+navbar = dbc.Navbar(
+    dbc.Container(
+            [
+                html.A(
+                    # Use row and col to control vertical alignment of logo / brand
+                    dbc.Row(
+                        [
+                            dbc.Col(html.Img(src=PLOTLY_LOGO, height="30px")),
+                            dbc.Col(dbc.NavbarBrand("Pre-mapeo de Formación con CDD", className="ms-2", style={"color":"white"})),
+                        ],
+                        align="left",
+                        className="g-0",
+                    ),
+                    href="https://plotly.com",
+                    style={"textDecoration": "none", "margin-left":"-100px"},
+                ),
+
+            ]
+        ),
+    color="dark",
+    dark=True
 )
+
 
 # TODO: Si se ha trabajado la actividad con alumnado y
 # se demuestra que han alcanzado el nivel de progresión
 # se mapea el área 6 con lo que venga, si no se borra
 actividad_con_alumnado = dbc.Switch(
     id="bool-con-alumnado",
-    label="¿Adquiere esta competencia el alumnado?",
+    label="El alumnado adquiere esta competencia.",
     value=False,
-    style={"margin": "10px", "margin-right": "30px"},
+    style={"margin": "10px", "margin-top":"20px"},
 )
 
 # Por debajo de 10 horas la puntuación máxima es un A2 ¿Máximo de horas?
 horas = dbc.Switch(
-    id="menos-de-10-horas",
-    label="¿La actividad tiene menos de 10 horas?",
-    value=False,
-    style={"margin": "10px", "margin-right": "30px"},
+                    id="menos-de-10-horas",
+                    label="La actividad tiene menos de 10 horas.",
+                    value=False,
+                    style={"margin": "10px", "margin-top": "20px"},
 )
 
 
@@ -50,44 +68,21 @@ modalidad = dcc.Dropdown(
     ],
     id="modalidad",
     placeholder="Selecciona la modalidad",
-    style={"margin": "10px", "margin-top": "30px"},
+    style = {"margin-top": "10px","margin-bottom":"10px", "margin-right": "30px", "background-color":"#E8E8E8", "width":"280px"}
 )
+
 
 palabras_clave = dbc.Textarea(
     id="palabras-clave",
     size="sm",
-    placeholder="Introduce palabras clave separadas por comas",
-    style={"margin": "10px", "margin-right": "30px"},
+    placeholder="  Introduce herramientas/plataformas/Apps que vayan a usarse en la formación, separado por comas ( , )",
+    style={"margin-top": "10px", "margin-bottom": "10px", "margin-right": "30px", "background-color": "#E8E8E8"}
 )
 
-palabras_no_encontradas = html.Div(id="no-encontrado", style={"margin": "10px"})
+palabras_no_encontradas = html.Div(id="no-encontrado", style={"margin-top":"2px","margin-bottom":"20px","color":"#FF6060"})
 
 search_inputs_rows = [
-    dbc.Row(
-        [
-            dbc.Col(
-                [
-                    palabras_clave,
-                    palabras_no_encontradas,
-                    modalidad,
-                ],
-                lg=8,
-                md=8,
-                xs=12,
-            ),
-            dbc.Col(
-                [
-                    actividad_con_alumnado,
-                    horas,
-                ],
-                lg=4,
-                md=4,
-                xs=12,
-            ),
-        ],
-        justify="center",
-        style={"margin": "10px"},
-    ),
+
     dbc.Row(
         [
             dbc.Col(
@@ -119,27 +114,71 @@ search_inputs_rows = [
                         style_cell={
                             "height": "auto",
                             # all three widths are needed
-                            "minWidth": "180px",
-                            "width": "180px",
-                            "maxWidth": "180px",
+                            "minWidth": "190px",
+                            "width": "190px",
+                            "maxWidth": "190px",
                             "whiteSpace": "normal",
                             "textAlign": "left",
+                            "fontFamily":"Helvetica",
                         },
+                        style_header = {
+                            "fontWeight":"bold",
+                            "backgroundColor":"#E8E8E8",
+                            "textAlign": "center",
+                            "fontFamily":"Helvetica",
+
+                        },
+                        style_cell_conditional=[
+                            {'if': {'column_id': 'nivel-de-progresion'},
+                             'width': '30%'},
+                        ]
                     ),
-                    dbc.Button("Añadir fila", id="editing-rows-button", n_clicks=0),
+
+                    dbc.Button("Añadir fila",
+                               id="editing-rows-button",
+                               n_clicks=0,
+                               size="sm",
+                               style={"margin-top":"20px","background-color":"black"}),
                     dbc.Button(
                         "Actualizar datos del csv",
                         id="refresh-data",
-                        style={"margin-left": "30px", "margin-right": "10px"},
+                        size="sm",
+                        style={"margin-left": "30px", "margin-right": "10px", "margin-top":"20px","background-color":"black"},
                     ),
-                    html.Div(id="output-last-update"),
+                    html.Div(id="output-last-update", style={"padding-top":"1%","font-size":"12px", "margin-left":"130px"}),
                 ],
                 lg=8,
                 md=8,
                 xs=12,
             ),
         ],
-        justify="center",
-        style={"margin": "10px"},
+        justify="left",
+        style={"margin": "20px","padding-top":"1%"},
+    ),
+#Row de palabrqas clave
+dbc.Row(
+        [
+            dbc.Col(
+                [
+                    palabras_clave,
+                    palabras_no_encontradas,
+                    modalidad,
+                ],
+                lg=8,
+                md=8,
+                xs=12,
+            ),
+            dbc.Col(
+                [
+                    actividad_con_alumnado,
+                    horas,
+                ],
+                lg=4,
+                md=4,
+                xs=12,
+            ),
+        ],
+        justify="left",
+        style={"margin": "20px"},
     ),
 ]

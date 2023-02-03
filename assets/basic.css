@@ -3,6 +3,10 @@ img[src*="#thumbnail"] {
     height:25px;
  }
 
+body {
+    background-image: url("images/Fondo.png");
+}
+
 /* color for links */
 a:link {
     color: #3E5C76;
@@ -20,15 +24,60 @@ a:hover {
 
 th, td {
     padding: 15px;
-    text-align: left;
+    text-align: center;
   }
 
 .Select-menu-outer {
     display : block !important;
     color: #999999;
 }
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot2 {
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+.tooltip {
+  text-align: left;
+
+}
+.tooltip2 {
+  text-align: left;
+}
+/* Stablish background-color for first 5 columns of an html table */
+
+th:nth-child(1), th:nth-child(2), th:nth-child(3), th:nth-child(4), th:nth-child(5) {
+    background-color: #FFBA5E;
+}
+
+th:nth-child(6), th:nth-child(7), th:nth-child(8) {
+    background-color: #4EDF54;
+}
+
+th:nth-child(9), th:nth-child(10), th:nth-child(11), th:nth-child(12) {
+    background-color: #428BF8;
+}
+
+th:nth-child(13), th:nth-child(14), th:nth-child(15) {
+    background-color: #0EBAC6;
+}
+
+th:nth-child(16), th:nth-child(17), th:nth-child(18) {
+    background-color: #BE37FF;
+}
+th:nth-child(19), th:nth-child(20), th:nth-child(21), th:nth-child(22), th:nth-child(23) {
+    background-color: #FF4087;
+}
 
     /* Select div with two classes assigned */
-/*    .dropdown-cell-value-shadow.cell-value-shadow {
-        color: #999999 !important;
-    } *
+/*    .dropdown-cell-value-shadow.cell-value-shadow { 
+        color: #999999 !important; 
+    } * 

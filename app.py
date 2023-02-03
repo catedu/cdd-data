@@ -6,7 +6,7 @@ import dash_auth
 import pandas as pd
 from dotenv import load_dotenv, find_dotenv
 
-load_dotenv(find_dotenv())
+load_dotenv(".env")
 
 VALID_USERNAME_PASSWORD_PAIRS = {os.environ.get("APPUSER"): os.environ.get("PASSWORD")}
 
