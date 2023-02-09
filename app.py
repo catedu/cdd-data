@@ -89,7 +89,7 @@ def show_table(palabras_clave, horas, modalidad, actividad_con_alumnado, rows):
         df_filtered, df_competencias, rows_filtered
     )
     if modalidad:
-        # TODO: filtro por modalidad quitando datos
+        # Filtro por modalidad quitando datos
         df_filtered = segun_modalidad(df_filtered, modalidad)
 
     # obtengo los datos de la tabla de Competencias y Nivel de progresión
