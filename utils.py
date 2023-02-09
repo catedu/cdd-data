@@ -63,7 +63,7 @@ def segun_modalidad(df, modalidad):
     """Si la modalidad es "Grupo de trabajo" se fija el valor 3 si la celda tiene valor en las columnas que empiecen por "2." """
     if modalidad == 4:
         df[df.filter(regex="2\.\d").columns] = df.filter(regex="2\.\d").applymap(
-            lambda x: 3 if x > 0 else x
+            lambda x: 3 if x > 0  and x < 3 else x
         )
     elif modalidad == 1:
         return df
