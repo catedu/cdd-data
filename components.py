@@ -8,6 +8,7 @@ PLOTLY_LOGO = "https://educa.aragon.es/o/educaragon-theme/images/header/banda.pn
 PLOTLY_Trans = "https://www.cddaragon.es/wp-content/uploads/2022/06/CARAMELO-BISEL-logocabecera.png"
 
 def generate_bootstrap_table(df):
+    # TODO: Añadir nombre de la competencia al hacer hover sobre el número
     return dbc.Table.from_dataframe(
         df,
         striped=True,
@@ -42,7 +43,7 @@ navbar = dbc.Navbar(
 )
 
 
-# TODO: Si se ha trabajado la actividad con alumnado y
+# Si se ha trabajado la actividad con alumnado y
 # se demuestra que han alcanzado el nivel de progresión
 # se mapea el área 6 con lo que venga, si no se borra
 actividad_con_alumnado = dbc.Switch(
@@ -71,7 +72,8 @@ modalidad = dcc.Dropdown(
     style = {"margin-top": "10px","margin-bottom":"10px", "margin-right": "30px", "background-color":"#E8E8E8", "width":"280px"}
 )
 
-
+# TODO: Cambiar el text area por un input https://community.plotly.com/t/auto-complete-text-suggestion-option-in-textfield/8940/6
+# para que añada elementos seleccionados debajo del campo de texto
 palabras_clave = dbc.Textarea(
     id="palabras-clave",
     size="sm",
