@@ -77,7 +77,7 @@ modalidad = dcc.Dropdown(
 palabras_clave = dbc.Textarea(
     id="palabras-clave",
     size="sm",
-    placeholder="Introduce herramientas/plataformas/Apps que vayan a usarse en la formación, separado por comas ( , )",
+    placeholder="Introduce herramientas/plataformas/Apps que formen parte de los contenidos de la formación; separado por comas ( , )",
     style={"margin-top": "10px", "margin-bottom": "10px", "margin-right": "30px", "background-color": "#E8E8E8"}
 )
 
