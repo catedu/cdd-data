@@ -48,7 +48,7 @@ navbar = dbc.Navbar(
 # se mapea el área 6 con lo que venga, si no se borra
 actividad_con_alumnado = dbc.Switch(
     id="bool-con-alumnado",
-    label="El alumnado adquiere esta competencia.",
+    label="Se concreta cómo enseñar estas Competencias Digitales al alumnado.",
     value=False,
     style={"margin": "10px", "margin-top":"20px"},
 )
@@ -77,7 +77,7 @@ modalidad = dcc.Dropdown(
 palabras_clave = dbc.Textarea(
     id="palabras-clave",
     size="sm",
-    placeholder="  Introduce herramientas/plataformas/Apps que vayan a usarse en la formación, separado por comas ( , )",
+    placeholder="Introduce herramientas/plataformas/Apps que vayan a usarse en la formación, separado por comas ( , )",
     style={"margin-top": "10px", "margin-bottom": "10px", "margin-right": "30px", "background-color": "#E8E8E8"}
 )
 

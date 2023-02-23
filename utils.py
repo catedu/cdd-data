@@ -8,7 +8,7 @@ def add_cdd_minimum(df: pd.DataFrame):
     """Añadir valores mínimos por tratarse formación CDD"""
     df["1.3"] = df["1.3"].apply(lambda x: 1 if x == 0 else x)
     df[["1.1", "1.4", "1.5"]] = df[["1.1", "1.4", "1.5"]].applymap(lambda x: max(x, 2))
-    df["3.1"] = df["3.1"].apply(lambda x: 1 if x == 0 else x)
+    # df["3.1"] = df["3.1"].apply(lambda x: 1 if x == 0 else x) Muevo esta línea a la función "Modficia según competencias" para que no se aplique si la competencia es Comunicación y colaboración profesional
     return df
 
 
@@ -85,6 +85,7 @@ def modifica_segun_competencias(df_filtered, df_competencias, rows):
     modifiers = {item: i + 1 for i, item in enumerate(NIVEL_DE_PROGRESION)}
 
     dfs = []
+    print(rows)
     for row in rows:
         if row[0] is None or row[1] is None:
             continue
@@ -93,6 +94,8 @@ def modifica_segun_competencias(df_filtered, df_competencias, rows):
             df_competencias.filter(regex="\d\.\d").columns,
         ]
         df = df.applymap(lambda x: x if x == 0 else modifiers[row[1]])
+        if row[0] != "Comunicación y colaboración profesional": # añado excepción para no modificar la competencia 3.1 por defecto
+            df["3.1"] = df["3.1"].apply(lambda x: 1 if x == 0 else x)
         dfs.append(df)
 
     dfs.append(df_filtered)
