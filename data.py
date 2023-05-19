@@ -12,6 +12,32 @@ NIVEL_DE_PROGRESION = [
     "Aplicación en el aula",
 ]
 
+NOMBRES_COMPETENCIAS = [
+    {"1.1": "Comunicación organizativa"},
+    {"1.2": "Participación, colaboración y coordinación profesional"},
+    {"1.3": "Práctica reflexiva"},
+    {"1.4": "Desarrollo profesional digital continuo (DPC)"},
+    {"1.5": "Protección de datos personales, privacidad, seguridad y bienestar digital"},
+    {"2.1": "Búsqueda y selección de contenidos digitales"},
+    {"2.2": "Creación y modifciación de contenidos digitales"},
+    {"2.3": "Protección, gestión y compartición de contenidos digitales"},
+    {"3.1": "Enseñanza"},
+    {"3.2": "Orientación y apoyo en el aprendizaje"},
+    {"3.3": "Aprendizaje entre iguales"},
+    {"3.4": "Aprendizaje autorregulado"},
+    {"4.1": "Recogida de datos a traves de herramientas digitales"},
+    {"4.2": "Analizar, organizar e interpretar esos datos con herramientas digitales"},
+    {"4.3": "Retroalimentación del proceso de E-A. usando herramientas digitales"},
+    {"5.1": "Accesibilidad e inclusión"},
+    {"5.2": "Atención a las diferencias personales en el aprendizaje"},
+    {"5.3": "Compromiso activo del alumnado con su propio aprendizaje"},
+    {"6.1": "Alfabetización mediática y en tratamiento de la información y de los datos"},
+    {"6.2": "Comunicación, colaboración y ciudadanía digital"},
+    {"6.3": "Creación de contenidos digitales"},
+    {"6.4": "Uso responsable y bienestar digital"},
+    {"6.5": "Resolución de problemas"},
+]
+
 # Create this dict as an ordered dict
 int_competencias = {
     1: "A1",

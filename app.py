@@ -20,6 +20,7 @@ from data import (
     df_keywords,
     last_update,
     df_competencias,
+    NOMBRES_COMPETENCIAS,
 )
 from utils import (
     filtrar_por_palabras_clave,
@@ -99,7 +100,7 @@ def show_table(palabras_clave, horas, modalidad, actividad_con_alumnado, rows):
     if horas:
         df_filtered = to_a2_if_below_10(df_filtered)
     df_filtered = convert_int_to_competencias(df_filtered)
-    return generate_bootstrap_table(df_filtered), palabras_no_encontradas
+    return generate_bootstrap_table(df_filtered, NOMBRES_COMPETENCIAS), palabras_no_encontradas
 
 
 @app.callback(

@@ -7,17 +7,44 @@ from data import input_df, NIVEL_DE_PROGRESION
 PLOTLY_LOGO = "https://educa.aragon.es/o/educaragon-theme/images/header/banda.png"
 PLOTLY_Trans = "https://www.cddaragon.es/wp-content/uploads/2022/06/CARAMELO-BISEL-logocabecera.png"
 
-def generate_bootstrap_table(df):
-    # TODO: Añadir nombre de la competencia al hacer hover sobre el número
-    return dbc.Table.from_dataframe(
-        df,
+def generate_bootstrap_table(df, nombres_competencias):
+    def get_name(key):
+        for dictionary in nombres_competencias:
+            if key in dictionary:
+                return dictionary[key]
+        return None 
+    
+    header = [
+        html.Th(name, id=f"{slugify(name)}", key=f"{slugify(name)}") 
+        for name in df.columns
+    ]
+    
+    body = [
+        html.Tr([
+            html.Td(df.iloc[i][col]) 
+            for col in df.columns
+        ]) 
+        for i in range(len(df))
+    ]
+    
+    tooltips = [
+        dbc.Tooltip(get_name(name), target=f"{slugify(name)}") 
+        for name in df.columns
+    ]
+    
+    table = dbc.Table(
+        # Use the children property to add each row
+        children=[
+            html.Thead(html.Tr(header)),
+            html.Tbody(body),
+        ] + tooltips,
         striped=True,
         bordered=True,
         hover=True,
         responsive=True,
         style={"margin": "20px", "width": "96%", "background-color":"white"},
     )
-
+    return table
 
 navbar = dbc.Navbar(
     dbc.Container(
